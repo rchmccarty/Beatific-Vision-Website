@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Empyrean — A Beatific Vision Application</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Italianno&display=swap');
+
+  :root {
+    --empyrean: #21368C;
+    --compline: #0A1340;
+    --compline-soft: #141C4E;
+    --gold: #C9A961;
+    --gold-light: #E5CB8E;
+    --vellum: #FAF6EE;
+    --ink: #1A1614;
+    --ink-soft: rgba(250, 246, 238, 0.65);
+    --rule: rgba(250, 246, 238, 0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 100vw; height: 100vh; overflow: hidden; }
+  body {
+    background: var(--compline);
+    color: var(--vellum);
+    font-family: 'Cormorant Garamond', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-user-select: none;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; background: none; border: none; cursor: pointer; color: inherit; }
+
+  /* ===== APP CHROME ===== */
+  .app {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background:
+      radial-gradient(ellipse at 25% 15%, rgba(33,54,140,0.5), transparent 65%),
+      radial-gradient(ellipse at 80% 85%, rgba(201,169,97,0.12), transparent 55%),
+      var(--compline);
+  }
+
+  /* ===== TITLE BAR ===== */
+  .titlebar {
+    height: 54px;
+    -webkit-app-region: drag;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px 0 96px; /* leave room for macOS traffic-lights */
+    border-bottom: 1px solid var(--rule);
+    background: rgba(6, 11, 46, 0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    position: relative;
+    z-index: 5;
+  }
+
+  .lockup {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    -webkit-app-region: no-drag;
+  }
+  .lockup .ms {
+    font-family: 'Italianno', cursive;
+    font-size: 28px;
+    color: var(--gold-light);
+    line-height: 1;
+  }
+  .lockup .mc {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--vellum);
+    text-indent: 0.35em;
+  }
+  .lockup .sep {
+    color: rgba(201, 169, 97, 0.4);
+    font-size: 10px;
+  }
+  .lockup .product {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    font-weight: 500;
+    text-indent: 0.35em;
+  }
+
+  .titlebar-search {
+    display: flex; align-items: center; gap: 10px;
+    padding: 7px 14px;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    -webkit-app-region: no-drag;
+    width: 280px;
+  }
+  .titlebar-search input {
+    background: transparent; border: none; outline: none;
+    color: var(--vellum); font: inherit; font-size: 13px; width: 100%;
+  }
+  .titlebar-search input::placeholder {
+    color: var(--ink-soft); font-style: italic;
+  }
+  .titlebar-search svg { color: var(--ink-soft); flex-shrink: 0; }
+
+  .titlebar-right {
+    display: flex; align-items: center; gap: 18px;
+    -webkit-app-region: no-drag;
+    font-family: 'Cinzel', serif;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+  .titlebar-right .ver { padding: 4px 10px; border: 1px solid var(--rule); border-radius: 2px; }
+
+  /* ===== MAIN AREA ===== */
+  .main {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* ===== SIDEBAR ===== */
+  .sidebar {
+    border-right: 1px solid var(--rule);
+    background: rgba(6, 11, 46, 0.35);
+    padding: 28px 0;
+    overflow-y: auto;
+  }
+  .sidebar h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 9px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: rgba(229, 203, 142, 0.65);
+    font-weight: 600;
+    margin: 24px 28px 12px;
+  }
+  .sidebar h4:first-of-type { margin-top: 0; }
+
+  .sidebar-item {
+    display: flex; align-items: center; gap: 14px;
+    padding: 10px 28px;
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--vellum);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    border-left: 2px solid transparent;
+  }
+  .sidebar-item:hover { background: rgba(201, 169, 97, 0.08); }
+  .sidebar-item.active {
+    background: rgba(33, 54, 140, 0.4);
+    border-left-color: var(--gold);
+    color: var(--gold-light);
+  }
+  .sidebar-item svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+  .sidebar-divider { height: 1px; background: var(--rule); margin: 20px 28px; }
+
+  /* ===== CONTENT ===== */
+  .content {
+    overflow-y: auto;
+    padding: 0;
+    position: relative;
+  }
+
+  .content-hero {
+    padding: 48px 56px 36px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .content-hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 32px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--vellum);
+    margin-bottom: 10px;
+  }
+  .content-hero p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--ink-soft);
+    max-width: 640px;
+    line-height: 1.55;
+  }
+
+  /* ===== CATALOG GRID ===== */
+  .catalog { padding: 36px 56px 56px; }
+
+  .section-bar {
+    display: flex; align-items: baseline; justify-content: space-between;
+    margin-bottom: 22px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .section-bar h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--vellum);
+    font-weight: 600;
+  }
+  .section-bar .count {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 22px;
+    margin-bottom: 48px;
+  }
+
+  .tile {
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .tile:hover { transform: translateY(-4px); }
+
+  .tile-poster {
+    aspect-ratio: 2 / 3;
+    border: 1px solid rgba(201, 169, 97, 0.2);
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 24px 18px;
+    background: linear-gradient(135deg, var(--compline) 0%, var(--empyrean) 100%);
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  .tile:hover .tile-poster {
+    border-color: var(--gold);
+    box-shadow: 0 18px 40px -16px rgba(0, 0, 0, 0.6);
+  }
+  .tile-poster.documentary { background: linear-gradient(135deg, #2a1810 0%, #4a2818 35%, #6e3a1e 70%, #c9a961 100%); }
+  .tile-poster.feature { background: linear-gradient(135deg, #060B2E 0%, #21368C 50%, #C9A961 100%); }
+  .tile-poster.short { background: linear-gradient(135deg, #2C3E5F 0%, #4A5575 100%); }
+  .tile-poster.partner { background: linear-gradient(135deg, #182763 0%, #2C3E5F 100%); }
+
+  .tile-poster::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 35% 25%, rgba(255,220,150, 0.25) 0%, transparent 55%);
+    pointer-events: none;
+  }
+  .tile-poster-top {
+    font-family: 'Cinzel', serif;
+    font-size: 7px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    font-weight: 600;
+    position: relative; z-index: 1;
+  }
+  .tile-poster-bottom { position: relative; z-index: 1; }
+  .tile-poster-script {
+    font-family: 'Italianno', cursive;
+    font-size: 30px;
+    color: var(--vellum);
+    line-height: 0.95;
+    filter: drop-shadow(0 2px 10px rgba(0,0,0,0.4));
+  }
+  .tile-poster-cap {
+    font-family: 'Cinzel', serif;
+    font-size: 8px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--vellum);
+    font-weight: 500;
+    text-indent: 0.32em;
+    margin-top: 6px;
+  }
+
+  .tile-meta { padding: 12px 4px 0; }
+  .tile-title {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--vellum);
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 4px;
+  }
+  .tile-info {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+
+  /* Coming-soon tile */
+  .tile.coming-soon { cursor: default; }
+  .tile.coming-soon:hover { transform: none; }
+  .tile.coming-soon .tile-poster {
+    background: linear-gradient(135deg, #1a1a2e 0%, #2a2a3e 100%);
+    border-style: dashed;
+    border-color: rgba(201, 169, 97, 0.25);
+  }
+  .tile.coming-soon .tile-poster-script {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(229, 203, 142, 0.7);
+    font-weight: 600;
+  }
+  .tile.coming-soon .tile-info { font-style: italic; }
+
+  /* ===== STATUS BAR ===== */
+  .statusbar {
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+    border-top: 1px solid var(--rule);
+    background: rgba(6, 11, 46, 0.5);
+    font-family: 'Cinzel', serif;
+    font-size: 8px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: rgba(250, 246, 238, 0.45);
+    font-weight: 500;
+  }
+  .statusbar .left { display: flex; gap: 24px; align-items: center; }
+  .statusbar .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); display: inline-block; margin-right: 8px; }
+
+  /* ===== PLAYER MODAL ===== */
+  .player-modal {
+    position: fixed; inset: 0;
+    background: rgba(6, 11, 46, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: none;
+    align-items: center; justify-content: center;
+    z-index: 100;
+  }
+  .player-modal.active { display: flex; }
+  .player-frame {
+    width: 90%; max-width: 1100px;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    position: relative;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+  }
+  .player-mark {
+    position: absolute;
+    top: 16px; left: 20px;
+    font-family: 'Italianno', cursive;
+    font-size: 22px;
+    color: var(--gold-light);
+    z-index: 2;
+    opacity: 0.7;
+    pointer-events: none;
+  }
+  .player-mark .cap {
+    font-family: 'Cinzel', serif;
+    font-size: 9px;
+    letter-spacing: 0.4em;
+    color: var(--vellum);
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  .player-frame video {
+    width: 100%; height: 100%; display: block;
+    background: #000;
+  }
+  .player-info {
+    position: absolute; bottom: -52px; left: 0;
+    color: var(--vellum);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+  }
+  .player-close {
+    position: absolute;
+    top: 16px; right: 20px;
+    width: 36px; height: 36px;
+    border: 1px solid var(--rule);
+    border-radius: 50%;
+    color: var(--vellum);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 2;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .player-close:hover { background: rgba(201, 169, 97, 0.15); border-color: var(--gold); }
+
+  /* ===== EMPTY-CATALOG NOTICE ===== */
+  .notice {
+    background: rgba(33, 54, 140, 0.15);
+    border: 1px solid rgba(201, 169, 97, 0.2);
+    border-radius: 4px;
+    padding: 18px 22px;
+    margin-bottom: 32px;
+    display: flex; align-items: center; gap: 14px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  .notice svg { color: var(--gold); flex-shrink: 0; }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(201, 169, 97, 0.2); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(201, 169, 97, 0.4); }
+</style>
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ===== TITLE BAR ===== -->
+  <div class="titlebar">
+    <div class="lockup">
+      <span class="ms">Beatific</span>
+      <span class="mc">Vision</span>
+      <span class="sep">·</span>
+      <span class="product">Empyrean</span>
+    </div>
+
+    <div class="titlebar-search">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" placeholder="Search the catalog…">
+    </div>
+
+    <div class="titlebar-right">
+      <span class="ver" id="version-display">v1.0.0</span>
+    </div>
+  </div>
+
+  <!-- ===== MAIN ===== -->
+  <div class="main">
+    <aside class="sidebar">
+      <h4>Library</h4>
+      <div class="sidebar-item active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg>
+        Home
+      </div>
+      <div class="sidebar-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 3-6 3z" fill="currentColor"/></svg>
+        Continue Watching
+      </div>
+      <div class="sidebar-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+        Saved
+      </div>
+
+      <h4>Browse</h4>
+      <div class="sidebar-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        All Films
+      </div>
+      <div class="sidebar-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+        Documentaries
+      </div>
+      <div class="sidebar-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5l3-3 17 17-3 3z"/><path d="M5 5h17v17"/></svg>
+        Features
+      </div>
+      <div class="sidebar-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        Shorts
+      </div>
+      <div class="sidebar-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Partner Catalog
+      </div>
+
+      <div class="sidebar-divider"></div>
+
+      <h4>From the House</h4>
+      <div class="sidebar-item" id="open-bv">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l8 4v6c0 5-3.5 9.5-8 10-4.5-.5-8-5-8-10V6z"/></svg>
+        Beatific Vision
+      </div>
+      <div class="sidebar-item" id="open-cfi">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M7 12h10"/></svg>
+        Catholic Film Institute
+      </div>
+      <div class="sidebar-item" id="open-cinematica">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="9" y="2" width="6" height="14" rx="3"/><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3"/></svg>
+        Catholica Cinematica
+      </div>
+    </aside>
+
+    <main class="content">
+      <div class="content-hero">
+        <h1>The Catalog</h1>
+        <p>Cinema, consecrated. The Beatific Vision library — original works, partner-organization films, and curated selections — assembled under one consecrated banner.</p>
+      </div>
+
+      <div class="catalog">
+
+        <div class="notice">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+          <span><strong style="color: var(--vellum); font-style: normal;">The catalog is in active development.</strong> Streaming availability will expand throughout MMXXVI as new works are commissioned and partner-organization licenses finalize.</span>
+        </div>
+
+        <div class="section-bar">
+          <h2>Now Showing</h2>
+          <span class="count">1 title · streaming live</span>
+        </div>
+
+        <div class="grid">
+          <div class="tile" id="play-mbt">
+            <div class="tile-poster documentary">
+              <div class="tile-poster-top">A Beatific Vision Film</div>
+              <div class="tile-poster-bottom">
+                <div class="tile-poster-script">The Most<br>Beautiful Thing</div>
+                <div class="tile-poster-cap">This Side of Heaven</div>
+              </div>
+            </div>
+            <div class="tile-meta">
+              <div class="tile-title">The Most Beautiful Thing This Side of Heaven</div>
+              <div class="tile-info">Documentary · 64 min · MMXI</div>
+            </div>
+          </div>
+
+          <div class="tile coming-soon">
+            <div class="tile-poster">
+              <div class="tile-poster-top">In Development</div>
+              <div class="tile-poster-bottom">
+                <div class="tile-poster-script">Coming Soon</div>
+                <div class="tile-poster-cap">MMXXVI Slate</div>
+              </div>
+            </div>
+            <div class="tile-meta">
+              <div class="tile-title">Untitled · BV Documentary II</div>
+              <div class="tile-info">In production · MMXXVI</div>
+            </div>
+          </div>
+
+          <div class="tile coming-soon">
+            <div class="tile-poster">
+              <div class="tile-poster-top">In Development</div>
+              <div class="tile-poster-bottom">
+                <div class="tile-poster-script">Coming Soon</div>
+                <div class="tile-poster-cap">MMXXVI Slate</div>
+              </div>
+            </div>
+            <div class="tile-meta">
+              <div class="tile-title">Untitled · BV Feature I</div>
+              <div class="tile-info">Pre-production · MMXXVI</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-bar">
+          <h2>Partner Catalog</h2>
+          <span class="count">Awaiting licensing &amp; ingest</span>
+        </div>
+
+        <div class="grid">
+          <div class="tile coming-soon">
+            <div class="tile-poster partner">
+              <div class="tile-poster-top">Partner Org · TBD</div>
+              <div class="tile-poster-bottom">
+                <div class="tile-poster-script">Forthcoming</div>
+                <div class="tile-poster-cap">From the Apostolate</div>
+              </div>
+            </div>
+            <div class="tile-meta">
+              <div class="tile-title">Awaiting Partner Title</div>
+              <div class="tile-info">License pending · MMXXVI</div>
+            </div>
+          </div>
+
+          <div class="tile coming-soon">
+            <div class="tile-poster partner">
+              <div class="tile-poster-top">Partner Org · TBD</div>
+              <div class="tile-poster-bottom">
+                <div class="tile-poster-script">Forthcoming</div>
+                <div class="tile-poster-cap">From the Apostolate</div>
+              </div>
+            </div>
+            <div class="tile-meta">
+              <div class="tile-title">Awaiting Partner Title</div>
+              <div class="tile-info">License pending · MMXXVI</div>
+            </div>
+          </div>
+
+          <div class="tile coming-soon">
+            <div class="tile-poster partner">
+              <div class="tile-poster-top">Partner Org · TBD</div>
+              <div class="tile-poster-bottom">
+                <div class="tile-poster-script">Forthcoming</div>
+                <div class="tile-poster-cap">From the Apostolate</div>
+              </div>
+            </div>
+            <div class="tile-meta">
+              <div class="tile-title">Awaiting Partner Title</div>
+              <div class="tile-info">License pending · MMXXVI</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- ===== STATUS BAR ===== -->
+  <div class="statusbar">
+    <div class="left">
+      <span><span class="dot"></span>Connected · MMXXVI Catalog</span>
+      <span>1 title available · 5 forthcoming</span>
+    </div>
+    <span>BEATIFIC VISION® · Empyrean v1.0.0</span>
+  </div>
+</div>
+
+<!-- ===== PLAYER MODAL ===== -->
+<div class="player-modal" id="player-modal">
+  <div class="player-frame">
+    <div class="player-mark">
+      Beatific
+      <span class="cap">VISION</span>
+    </div>
+    <button class="player-close" id="player-close" aria-label="Close player">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+    </button>
+    <video id="player-video" controls playsinline preload="metadata">
+      <source src="" type="video/mp4">
+    </video>
+    <div class="player-info">
+      <strong style="font-style: normal; font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--vellum);" id="player-title">The Most Beautiful Thing This Side of Heaven</strong>
+      <span style="margin-left: 12px; color: var(--ink-soft);" id="player-meta">A Beatific Vision Documentary · MMXI</span>
+    </div>
+  </div>
+</div>
+
+<script>
+// ----- Version display via preload bridge -----
+(async () => {
+  if (window.empyrean) {
+    try {
+      const v = await window.empyrean.getVersion();
+      document.getElementById('version-display').textContent = 'v' + v;
+    } catch {}
+  }
+})();
+
+// ----- Sidebar item active state -----
+document.querySelectorAll('.sidebar-item').forEach(item => {
+  item.addEventListener('click', () => {
+    if (item.id && item.id.startsWith('open-')) return;
+    document.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('active'));
+    item.classList.add('active');
+  });
+});
+
+// ----- External links from sidebar -----
+const openExt = (url) => {
+  if (window.empyrean && window.empyrean.openExternal) {
+    window.empyrean.openExternal(url);
+  } else {
+    window.open(url, '_blank');
+  }
+};
+document.getElementById('open-bv')?.addEventListener('click', () => openExt('https://beatificvision.com'));
+document.getElementById('open-cfi')?.addEventListener('click', () => openExt('https://catholicfilminstitute.org'));
+document.getElementById('open-cinematica')?.addEventListener('click', () => openExt('https://www.podpage.com/catholicacinematica/'));
+
+// ----- Player Modal -----
+const modal = document.getElementById('player-modal');
+const video = document.getElementById('player-video');
+const closeBtn = document.getElementById('player-close');
+
+document.getElementById('play-mbt')?.addEventListener('click', () => {
+  // For now we don't ship a real video file, but the player UI is real.
+  // Production: video.src = 'file:///opt/empyrean/catalog/mbt-restored-2026.mp4';
+  video.src = '';
+  modal.classList.add('active');
+  document.getElementById('player-title').textContent = 'The Most Beautiful Thing This Side of Heaven';
+  document.getElementById('player-meta').textContent = 'A Beatific Vision Documentary · MMXI · Restored MMXXVI';
+});
+closeBtn?.addEventListener('click', () => {
+  video.pause(); modal.classList.remove('active');
+});
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) { video.pause(); modal.classList.remove('active'); }
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modal.classList.contains('active')) { video.pause(); modal.classList.remove('active'); }
+});
+</script>
+</body>
+</html>
