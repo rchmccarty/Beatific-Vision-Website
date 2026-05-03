@@ -33,6 +33,10 @@
   "redirects": [
     { "source": "/index.html", "destination": "/", "permanent": true },
     { "source": "/empyrean", "destination": "/app", "permanent": false },
-    { "source": "/podcast", "destination": "/listen", "permanent": false }
+    { "source": "/podcast", "destination": "/listen", "permanent": false },
+    { "source": "/download/mac", "destination": "https://github.com/rchmccarty/Beatific-Vision-Website/releases/download/Empyrean/Empyrean-1.0.0-arm64-mac.zip", "permanent": false },
+    { "source": "/download/mac-intel", "destination": "https://github.com/rchmccarty/Beatific-Vision-Website/releases/download/Empyrean/Empyrean-1.0.0-mac.zip", "permanent": false },
+    { "source": "/download/windows", "destination": "https://github.com/rchmccarty/Beatific-Vision-Website/releases/download/Empyrean/Empyrean.Setup.1.0.0.exe", "permanent": false },
+    { "source": "/download/linux", "destination": "https://github.com/rchmccarty/Beatific-Vision-Website/releases/download/Empyrean/Empyrean-1.0.0.AppImage", "permanent": false }
   ]
 }
