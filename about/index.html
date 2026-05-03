@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Beatific Vision</title>
+<meta name="description" content="The history, mission, and architecture of Beatific Vision — a Catholic film studio founded in 2010, resumed in 2024, built for perpetuity.">
+<link rel="icon" type="image/jpeg" href="/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Italianno&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.prose {
+  max-width: 720px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  line-height: 1.75;
+  color: var(--ink);
+}
+.prose p { margin-bottom: 1.4em; }
+.prose p:first-of-type::first-letter {
+  font-family: 'Cinzel', serif; font-weight: 600;
+  font-size: 4.4em; float: left;
+  line-height: 0.85; margin: 0.05em 0.12em 0 0;
+  color: var(--empyrean);
+}
+.prose em { color: var(--empyrean); font-style: italic; }
+.prose strong { color: var(--compline); font-weight: 600; }
+.prose blockquote {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 24px; line-height: 1.4;
+  color: var(--empyrean);
+  margin: 32px 0; padding: 0 0 0 28px;
+  border-left: 2px solid var(--gold);
+}
+.prose h2 {
+  font-family: 'Cinzel', serif; font-size: 22px;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--compline); font-weight: 600;
+  margin-top: 56px; margin-bottom: 18px;
+}
+
+/* Timeline */
+.timeline { max-width: 800px; margin: 0 auto; }
+.tl-row {
+  display: grid; grid-template-columns: 120px 1fr;
+  gap: 36px; padding: 28px 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: baseline;
+}
+.tl-year {
+  font-family: 'Cinzel', serif; font-size: 28px;
+  letter-spacing: 0.04em; color: var(--gold-deep);
+  font-weight: 600;
+}
+.tl-content h3 {
+  font-family: 'Cinzel', serif; font-size: 13px;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--compline); font-weight: 600; margin-bottom: 8px;
+}
+.tl-content p {
+  font-family: 'Cormorant Garamond', serif; font-size: 16px;
+  line-height: 1.6; color: var(--ink-soft);
+}
+.tl-content em { color: var(--empyrean); font-style: italic; }
+
+/* Mission cards (mission/vision/motto) */
+.trinity {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 28px; margin-top: 48px;
+}
+@media (max-width: 900px) { .trinity { grid-template-columns: 1fr; } }
+.trinity-card {
+  background: var(--vellum-warm);
+  border-left: 2px solid var(--gold);
+  padding: 36px 32px;
+}
+.trinity-card .lbl {
+  font-family: 'Cinzel', serif; font-size: 9px;
+  letter-spacing: 0.32em; text-transform: uppercase;
+  color: var(--gold-deep); font-weight: 600; margin-bottom: 14px;
+}
+.trinity-card .ttl {
+  font-family: 'Cinzel', serif; font-size: 16px;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--compline); font-weight: 600; margin-bottom: 14px;
+}
+.trinity-card p {
+  font-family: 'Cormorant Garamond', serif; font-size: 15px;
+  line-height: 1.6; color: var(--ink); font-style: italic;
+}
+.trinity-card .latin {
+  font-family: 'Italianno', cursive; font-size: 32px;
+  color: var(--empyrean); margin-top: 16px; line-height: 1;
+}
+</style>
+</head>
+<body>
+
+<nav class="nav solid">
+  <a href="/" class="nav-mark"><span class="ms">Beatific</span><span class="mc">Vision</span></a>
+  <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="/watch">Watch</a></li>
+    <li><a href="/listen">Listen</a></li>
+    <li><a href="/read">Read</a></li>
+    <li><a href="/app">Apps</a></li>
+    <li><a href="/about" class="active">About</a></li>
+    <li><a href="/cfi">CFI</a></li>
+    <li><a href="/support" class="cta">Support</a></li>
+  </ul>
+</nav>
+
+<section class="page-hero">
+  <div class="container page-hero-content">
+    <div class="eyebrow">About the House</div>
+    <h1>Behold. Build. <em>Bequeath.</em></h1>
+    <p class="lede">A Catholic film studio and integrated media enterprise. Founded MMX. Resumed MMXXIV. Built for perpetuity, in Saint Charles, Missouri.</p>
+  </div>
+  <div class="page-hero-edge"></div>
+</section>
+
+<!-- ===================== FOUNDER'S LETTER ===================== -->
+<section>
+  <div class="container-narrow">
+    <div data-reveal>
+      <div class="eyebrow">Letter from the Founder</div>
+      <h2 class="section-h2" style="text-align: left; max-width: 720px; margin-left: 0; margin-top: 24px;">An interrupted vocation, <em>resumed.</em></h2>
+
+      <div class="prose" style="margin-top: 36px;">
+        <p>Beatific Vision was conceived in 2010, in the conviction — then as now — that the cinema is the unfinished business of the Church. In 2011, we launched the <strong>Seraphim Screenwriting Competition</strong>, the first nationwide Catholic screenwriting contest, with submissions from filmmakers in twenty-three states and three countries. That same year, we released our first feature-length documentary, <em>The Most Beautiful Thing This Side of Heaven</em>, an account of the Traditional Latin Mass returning to the Archdiocese of Kansas City. In 2012, we hosted an inaugural national conference of Catholic creatives and began development on a dramatic feature.</p>
+
+        <p>And then, for a season, the work was set aside. Law called. Family called. The studio waited.</p>
+
+        <blockquote>The conviction never altered. The conviction only deepened.</blockquote>
+
+        <p>What I learned in the intervening years — building a legal practice, marrying, raising children — is that the work I had begun in my twenties was not a phase to be outgrown but a vocation to be reassumed. The cinema had only continued to surrender. The need had only continued to grow. The interval had given me what I had not had at twenty-three: a sense of <em>scale</em>, an understanding of what an enterprise like this requires of its founder, and the experience of building durable institutions slowly.</p>
+
+        <p>In 2024, we resumed. We re-secured the marks. We stood up the corporate architecture for perpetuity — a holding LLC for patrimony, a Public Benefit Corporation for operations, a 501(c)(3) for charitable formation, and the brand structure beneath which every future vertical will operate. We re-engaged the founding documentary's negatives for restoration. We commissioned the Brand Guide. We began this site.</p>
+
+        <p>The labor ahead is not modest. We mean to disrupt the industrial complex that has confused beauty with spectacle, to recover the liturgical patrimony of the Catholic imagination, and to build — institution by institution — what the next two centuries of Catholic cinema will inhabit. <strong>We do not expect to finish in our lifetime. We expect to leave it possible to finish.</strong></p>
+
+        <p style="font-family: 'Italianno', cursive; font-size: 44px; color: var(--empyrean); line-height: 1; margin-top: 36px; margin-bottom: 4px;">Ryan C. McCarty</p>
+        <p style="font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ink-soft); font-weight: 500;">Founder &amp; President · Beatific Vision · Saint Charles, MO · Anno Domini MMXXVI</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HISTORY TIMELINE ===================== -->
+<section style="background: var(--vellum-warm); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <div class="eyebrow center">A Brief History</div>
+      <h2 class="section-h2">Founded MMX. <em>Resumed</em> MMXXIV.</h2>
+      <p class="section-lede">Sixteen years from first stake to present labor. The interval is part of the story; the conviction was constant throughout it.</p>
+    </div>
+
+    <div class="timeline" data-reveal>
+      <div class="tl-row">
+        <div class="tl-year">2010</div>
+        <div class="tl-content">
+          <h3>Founding</h3>
+          <p>Beatific Vision is established as a Catholic media organization on the Feast of St. Veronica — patron saint of photographers and filmmakers — by Ryan C. McCarty.</p>
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-year">2011</div>
+        <div class="tl-content">
+          <h3>Seraphim Screenwriting Competition · First Documentary</h3>
+          <p>Launch of the Seraphim Screenwriting Competition, the <em>first nationwide Catholic screenwriting contest</em>. Release of the feature-length documentary <em>The Most Beautiful Thing This Side of Heaven</em>, on the return of the Traditional Latin Mass to the Archdiocese of Kansas City.</p>
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-year">2012</div>
+        <div class="tl-content">
+          <h3>National Conference · Feature Development</h3>
+          <p>Beatific Vision hosts an inaugural national conference of Catholic creatives. Development begins on a dramatic feature, <em>Jeremy</em>.</p>
+        </div>
+      </div>
+
+      <div class="tl-row" style="opacity: 0.7;">
+        <div class="tl-year" style="color: var(--ink-soft);">2013–2023</div>
+        <div class="tl-content">
+          <h3>The Interval</h3>
+          <p>The founder's work shifts to law and family. Beatific Vision's active operations are paused. <em>The marks are maintained. The conviction deepens.</em></p>
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-year">2024</div>
+        <div class="tl-content">
+          <h3>Resumption · Reincorporation as PBC</h3>
+          <p><strong>May 1:</strong> Beatific Vision is reincorporated as a Delaware Public Benefit Corporation focused on motion picture production and distribution. <strong>July 12:</strong> The Catholic Film Institute is established as a 501(c)(3) charitable apostolate. <strong>September 3–6:</strong> Vision validation at the SENT Summit in Indianapolis.</p>
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-year">2025</div>
+        <div class="tl-content">
+          <h3>Architecture &amp; Brand</h3>
+          <p>The dual-entity architecture is finalized: Beatific Vision, LLC as patrimony holding company; Beatific Vision, Inc. (PBC) as operations. Mark-securement and brand-development engagements with Loeb &amp; Loeb. The Catholic Film Institute publishes its first Case for Support.</p>
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-year">2026</div>
+        <div class="tl-content">
+          <h3>Public Launch</h3>
+          <p>Public launch of the Beatific Vision platform — beatificvision.com, the Empyrean desktop application, the Catholica Cinematica podcast, the Journal of Catholic Cinema. <em>The work resumes in earnest.</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MISSION / VISION / MOTTO ===================== -->
+<section>
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <div class="eyebrow center">The Triple Charge</div>
+      <h2 class="section-h2">Mission. Vision. <em>Motto.</em></h2>
+    </div>
+
+    <div class="trinity">
+      <div class="trinity-card" data-reveal>
+        <div class="lbl">First</div>
+        <div class="ttl">Mission</div>
+        <p>To recover the cinema for the Catholic imagination — by craft and conviction, by deed and patrimony, by the building of an integrated infrastructure that no single film could provide.</p>
+      </div>
+      <div class="trinity-card" data-reveal>
+        <div class="lbl">Second</div>
+        <div class="ttl">Vision</div>
+        <p>To be, within fifty years, the unmistakable parent house of the new Catholic cinema — and to leave behind a heritage so well-constructed that our children inherit not a brand but a vocation.</p>
+      </div>
+      <div class="trinity-card" data-reveal>
+        <div class="lbl">Third</div>
+        <div class="ttl">Motto</div>
+        <p>Three verbs, one vocation:<br><strong>Behold</strong> what is good. <strong>Build</strong> what we behold. <strong>Bequeath</strong> what we build.</p>
+        <div class="latin">Per visum, ad gloriam.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BRAND ARCHITECTURE ===================== -->
+<section id="brand" style="background: var(--compline); color: var(--vellum);">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <div class="eyebrow gold center">The House &amp; Its Members</div>
+      <h2 class="section-h2" style="color: var(--vellum);">One brand. Two entities.<br><em style="color: var(--gold-light);">Many apostolates.</em></h2>
+      <p class="section-lede" style="color: rgba(250,246,238,0.85);">Beatific Vision is a single brand encompassing two corporate entities — a holding LLC for patrimony and a Public Benefit Corporation for operations — together with their apostolates, joint ventures, sub-brands, and the future verticals of a Catholic creative industry.</p>
+    </div>
+
+    <div style="max-width: 900px; margin: 0 auto;" data-reveal>
+
+      <div style="background: rgba(250,246,238,0.04); border: 1px solid rgba(201,169,97,0.25); padding: 32px 36px; margin-bottom: 24px;">
+        <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 16px;">
+          <span style="font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold-light); font-weight: 600;">Patrimony Arm</span>
+        </div>
+        <h3 style="font-family: 'Cinzel', serif; font-size: 22px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--vellum); font-weight: 600; margin-bottom: 14px;">Beatific Vision, LLC</h3>
+        <p style="font-family: 'Cormorant Garamond', serif; font-size: 17px; line-height: 1.6; color: rgba(250,246,238,0.85);">A Delaware single-member limited liability company. Holds all intellectual property of the enterprise — trademarks, copyrights, masters. Sole member of the Catholic Film Institute. Designed for perpetuity, with succession provisions extending across generations of the founding family. <em style="color: var(--gold-light);">The mission lock.</em></p>
+      </div>
+
+      <div style="background: rgba(250,246,238,0.04); border: 1px solid rgba(201,169,97,0.25); padding: 32px 36px; margin-bottom: 24px;">
+        <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 16px;">
+          <span style="font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold-light); font-weight: 600;">Operations Arm</span>
+        </div>
+        <h3 style="font-family: 'Cinzel', serif; font-size: 22px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--vellum); font-weight: 600; margin-bottom: 14px;">Beatific Vision, Inc. <span style="color: var(--gold-light); font-size: 14px; font-weight: 400; letter-spacing: 0.2em;">(PBC)</span></h3>
+        <p style="font-family: 'Cormorant Garamond', serif; font-size: 17px; line-height: 1.6; color: rgba(250,246,238,0.85);">A Delaware Public Benefit Corporation focused on motion picture production and distribution. 10,000,000 authorized shares — yet to be issued. The studio at industry scale; the engine through which patron capital will fund the work. Statutory mission lock embedded in the Certificate of Incorporation. <em style="color: var(--gold-light);">The Catholic Hollywood.</em></p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px;">
+        <div style="background: rgba(250,246,238,0.03); border: 1px solid rgba(201,169,97,0.18); padding: 24px 22px;">
+          <div style="font-family: 'Cinzel', serif; font-size: 8px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold-light); font-weight: 600; margin-bottom: 10px;">Charitable Apostolate</div>
+          <div style="font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--vellum); font-weight: 600; margin-bottom: 8px;">Catholic Film Institute</div>
+          <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 13px; color: rgba(250,246,238,0.7); line-height: 1.5;">501(c)(3) · Formation, education &amp; patronage of Catholic filmmakers</p>
+        </div>
+        <div style="background: rgba(250,246,238,0.03); border: 1px solid rgba(201,169,97,0.18); padding: 24px 22px;">
+          <div style="font-family: 'Cinzel', serif; font-size: 8px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold-light); font-weight: 600; margin-bottom: 10px;">Joint Venture</div>
+          <div style="font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--vellum); font-weight: 600; margin-bottom: 8px;">Catholica Cinematica</div>
+          <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 13px; color: rgba(250,246,238,0.7); line-height: 1.5;">Podcast · The conversation of the new Catholic cinema</p>
+        </div>
+        <div style="background: rgba(250,246,238,0.03); border: 1px solid rgba(201,169,97,0.18); padding: 24px 22px;">
+          <div style="font-family: 'Cinzel', serif; font-size: 8px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold-light); font-weight: 600; margin-bottom: 10px;">Sub-Brand</div>
+          <div style="font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--vellum); font-weight: 600; margin-bottom: 8px;">Empyrean</div>
+          <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 13px; color: rgba(250,246,238,0.7); line-height: 1.5;">Desktop application · macOS &amp; Windows · The catalog</p>
+        </div>
+      </div>
+
+      <p style="text-align: center; margin-top: 36px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 15px; color: rgba(250,246,238,0.65); max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.55;">Future verticals — a guild analog, a representation agency, a production-finance vehicle, a distribution arm, a streaming platform — will be stood up beneath this same banner as the work develops.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="ms">Beatific</div>
+        <div class="mc">Vision</div>
+        <p class="blurb">A Catholic film studio and integrated media enterprise. Founded MMX. Resumed MMXXIV. Saint Charles, Missouri.</p>
+      </div>
+      <div class="footer-col"><h4>The Catalog</h4><ul><li><a href="/watch">Watch</a></li><li><a href="/listen">Listen</a></li><li><a href="/read">Read</a></li><li><a href="/app">Empyrean App</a></li></ul></div>
+      <div class="footer-col"><h4>The House</h4><ul><li><a href="/about">About Beatific Vision</a></li><li><a href="/cfi">Catholic Film Institute</a></li><li><a href="/listen">Catholica Cinematica</a></li><li><a href="/about#brand">Brand &amp; Marks</a></li></ul></div>
+      <div class="footer-col"><h4>Take Part</h4><ul><li><a href="/support">Subscribe</a></li><li><a href="https://secure.qgiv.com/for/catholicfilminstitute" target="_blank" rel="noopener">Donate to CFI</a></li><li><a href="mailto:rchmccarty@beatificvision.com">Contact</a></li><li><a href="/legal">Legal &amp; Trademarks</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© Anno Domini MMXXVI · Beatific Vision, LLC &amp; Beatific Vision, Inc.</span>
+      <span>BEATIFIC VISION® · Reg. USPTO · Serial 98488250 &amp; 98541662</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const navToggle = document.getElementById('nav-toggle');
+const navLinks = document.getElementById('nav-links');
+navToggle?.addEventListener('click', () => navLinks.classList.toggle('is-open'));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('is-open')));
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, idx) => {
+    if (entry.isIntersecting) { setTimeout(() => entry.target.classList.add('is-visible'), idx * 50); observer.unobserve(entry.target); }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+# Build outputs
+empyrean-app/dist/
+empyrean-app/out/
+empyrean-app/node_modules/
+
+# Dependencies
+node_modules/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Logs & env
+*.log
+npm-debug.log*
+.env
+.env.local
+.vercel

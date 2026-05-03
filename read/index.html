@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Read — The Journal · Beatific Vision</title>
+<meta name="description" content="Essays, criticism, and journal entries on cinema, theology, and the recovery of the Catholic imagination — published under the Beatific Vision banner.">
+<link rel="icon" type="image/jpeg" href="/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Italianno&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.article-feature {
+  background: var(--vellum); border: 1px solid var(--rule);
+  display: grid; grid-template-columns: 1.3fr 1fr; min-height: 480px;
+  margin-bottom: 60px;
+}
+@media (max-width: 900px) { .article-feature { grid-template-columns: 1fr; } }
+.article-feature-text { padding: 56px 56px 48px; display: flex; flex-direction: column; justify-content: center; }
+@media (max-width: 720px) { .article-feature-text { padding: 36px 28px; } }
+.article-feature-text .label {
+  font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase;
+  color: var(--gold-deep); font-weight: 600; margin-bottom: 14px;
+  display: flex; align-items: center; gap: 10px;
+}
+.article-feature-text .label::before { content: ''; width: 18px; height: 1px; background: var(--gold); }
+.article-feature-text h2 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(28px, 3.8vw, 44px);
+  letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--compline); font-weight: 500; line-height: 1.15; margin-bottom: 18px;
+}
+.article-feature-text .lede {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 19px; line-height: 1.6; color: var(--ink); margin-bottom: 22px;
+}
+.article-feature-text .meta {
+  font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase;
+  color: var(--ink-soft); font-weight: 500; margin-bottom: 24px;
+}
+.article-feature-image {
+  background: linear-gradient(135deg, var(--compline) 0%, var(--empyrean) 100%);
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.article-feature-image::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 35% 25%, rgba(201,169,97,0.25) 0%, transparent 55%);
+}
+.article-feature-image .roman-num {
+  font-family: 'Cinzel', serif; font-size: 120px; color: rgba(201,169,97,0.15);
+  font-weight: 600; letter-spacing: 0.04em;
+  position: relative; z-index: 1;
+}
+
+/* Article cards */
+.article-card { border-bottom: 1px solid var(--rule); padding: 36px 0; display: grid; grid-template-columns: 1fr 4fr; gap: 40px; align-items: baseline; transition: opacity 0.3s; }
+.article-card:hover { opacity: 0.85; }
+.article-card:hover h3 { color: var(--empyrean); }
+@media (max-width: 720px) { .article-card { grid-template-columns: 1fr; gap: 12px; } }
+
+.article-card-meta {
+  font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold-deep); font-weight: 600;
+}
+.article-card-meta .date {
+  display: block; color: var(--ink-soft); font-weight: 500; margin-top: 4px; letter-spacing: 0.25em;
+}
+.article-card h3 {
+  font-family: 'Cinzel', serif; font-size: 22px; letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--compline); font-weight: 500; line-height: 1.25; margin-bottom: 10px;
+  transition: color 0.3s;
+}
+.article-card .excerpt {
+  font-family: 'Cormorant Garamond', serif; font-size: 17px; line-height: 1.6; color: var(--ink-soft);
+  font-style: italic;
+}
+.article-card .read-more {
+  font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase;
+  color: var(--empyrean); font-weight: 600; margin-top: 12px; display: inline-flex; align-items: center; gap: 8px;
+}
+.article-card .read-more::after { content: '→'; }
+</style>
+</head>
+<body>
+
+<nav class="nav solid">
+  <a href="/" class="nav-mark"><span class="ms">Beatific</span><span class="mc">Vision</span></a>
+  <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="/watch">Watch</a></li>
+    <li><a href="/listen">Listen</a></li>
+    <li><a href="/read" class="active">Read</a></li>
+    <li><a href="/app">Apps</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/cfi">CFI</a></li>
+    <li><a href="/support" class="cta">Support</a></li>
+  </ul>
+</nav>
+
+<section class="page-hero">
+  <div class="container page-hero-content">
+    <div class="eyebrow">The Journal</div>
+    <h1>Read.</h1>
+    <p class="lede">Essays, criticism, journal entries, and prose presentations on cinema, theology, and the recovery of the Catholic imagination. <em>Long-form, unhurried, in our own voice.</em></p>
+  </div>
+  <div class="page-hero-edge"></div>
+</section>
+
+<!-- ===================== FEATURED ARTICLE ===================== -->
+<section style="padding-top: 80px;">
+  <div class="container-narrow">
+    <a href="#article-i" class="article-feature" data-reveal style="text-decoration: none; color: inherit;">
+      <div class="article-feature-text">
+        <div class="label">Featured · Inaugural Essay</div>
+        <h2>An Unfinished Cathedral</h2>
+        <p class="lede">It is sometimes said that the great age of Catholic art is behind us — that the cathedrals were built, the icons painted, the great fugues composed, and that what remains is to admire and preserve. We do not believe this. We believe the cathedral of the modern age is the cinema, and that its construction has been arrested at the foundations.</p>
+        <div class="meta">Ryan C. McCarty · 30 April · MMXXVI · 2,400 words</div>
+        <span class="read-more" style="font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--empyrean); font-weight: 600; align-self: flex-start;">Read the Essay →</span>
+      </div>
+      <div class="article-feature-image">
+        <div class="roman-num">I</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ===================== ARTICLE LIST ===================== -->
+<section style="padding-top: 0;">
+  <div class="container-narrow">
+    <h2 style="font-family: 'Cinzel', serif; font-size: 22px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--compline); font-weight: 600; padding-bottom: 18px; border-bottom: 1px solid var(--rule); margin-bottom: 0;">Recent Entries</h2>
+
+    <a href="#article-ii" class="article-card" data-reveal>
+      <div class="article-card-meta">
+        Manifesto · II
+        <span class="date">28 April · MMXXVI</span>
+      </div>
+      <div>
+        <h3>Why "Catholic Cinema" Is Not a Genre</h3>
+        <p class="excerpt">The phrase "Catholic film" is most often deployed to describe a category of religious-themed entertainment — saints, scripture, the lives of the holy. It is a useful descriptive shorthand, but it is also profoundly misleading. The Catholic imagination, properly understood, is not a subject matter but a way of seeing. It is the conviction that creation is sacramental, that matter participates in spirit, and that beauty is the visible form of the good…</p>
+        <span class="read-more">Continue Reading</span>
+      </div>
+    </a>
+
+    <a href="#article-iii" class="article-card" data-reveal>
+      <div class="article-card-meta">
+        Founder's Letter · III
+        <span class="date">15 April · MMXXVI</span>
+      </div>
+      <div>
+        <h3>An Interrupted Vocation, Resumed</h3>
+        <p class="excerpt">A letter from the founder on the long pause between Beatific Vision's first season — 2010 to 2012 — and its resumption in 2024. On the work of law, the formation of a family, the maintenance of conviction across years of apparent silence, and the slow consolidation of what is now an integrated media enterprise…</p>
+        <span class="read-more">Continue Reading</span>
+      </div>
+    </a>
+
+    <a href="#article-iv" class="article-card" data-reveal>
+      <div class="article-card-meta">
+        Criticism · IV
+        <span class="date">10 April · MMXXVI</span>
+      </div>
+      <div>
+        <h3>The Hollywood Industrial Complex and Its Discontents</h3>
+        <p class="excerpt">The mainstream studios are no longer in the business of cinema; they are in the business of intellectual property exploitation. This is not a moral indictment but a structural one. A studio that has hollowed out its R&amp;D function, mortgaged its catalogs, and committed itself to franchise extension cannot be expected to produce art. It is producing what the system rewards: yield…</p>
+        <span class="read-more">Continue Reading</span>
+      </div>
+    </a>
+
+    <a href="#article-v" class="article-card" data-reveal>
+      <div class="article-card-meta">
+        Theology &amp; Cinema · V
+        <span class="date">2 April · MMXXVI</span>
+      </div>
+      <div>
+        <h3>Bresson's Reverence and What It Demands of Us</h3>
+        <p class="excerpt">Robert Bresson's films are difficult to describe and impossible to imitate, in part because his work proceeds from a theological premise that contemporary cinema has largely abandoned: that the human face, attentively framed and quietly held, is itself a site of grace. To recover Bresson is to recover a doctrine of the visible, and the labor that doctrine demands of the maker…</p>
+        <span class="read-more">Continue Reading</span>
+      </div>
+    </a>
+
+    <a href="#article-vi" class="article-card" data-reveal>
+      <div class="article-card-meta">
+        Interview · VI
+        <span class="date">22 March · MMXXVI</span>
+      </div>
+      <div>
+        <h3>"We Need Sanctuaries" — A Conversation with Gonzalo Zubillaga</h3>
+        <p class="excerpt">The film score composer and music producer behind Kairos Films &amp; Music Composition Studio reflects on three continents of work in secular media, the Catholic creator's persistent loneliness in the industry, and what would change if there were proper institutional homes for serious Catholic artists. A conversation conducted by correspondence…</p>
+        <span class="read-more">Continue Reading</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ===================== JOURNAL OF CATHOLIC CINEMA ===================== -->
+<section style="background: var(--compline); color: var(--vellum); text-align: center;">
+  <div class="container-narrow">
+    <div data-reveal>
+      <div class="eyebrow gold center">Coming · MMXXVI</div>
+      <h2 style="font-family: 'Cinzel', serif; font-size: clamp(32px, 4.5vw, 52px); font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--vellum); line-height: 1.15; margin-top: 24px;">The Journal of Catholic Cinema</h2>
+      <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 19px; color: rgba(250,246,238,0.85); margin: 28px auto 36px; line-height: 1.6; max-width: 640px;">A quarterly print and digital journal, publishing serious criticism, archival recovery, theological essay, and original Catholic film theory. Published in association with the Catholic Film Institute. <em style="color: var(--gold-light);">First issue forthcoming.</em></p>
+      <a href="/support" class="btn btn-light">Subscribe to Be Notified</a>
+      <p style="margin-top: 56px; font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(250,246,238,0.5); font-weight: 500;">Editorial publication services rendered under the BEATIFIC VISION® mark · USPTO Class 41</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="ms">Beatific</div>
+        <div class="mc">Vision</div>
+        <p class="blurb">A Catholic film studio and integrated media enterprise. Founded MMX. Resumed MMXXIV. Saint Charles, Missouri.</p>
+      </div>
+      <div class="footer-col"><h4>The Catalog</h4><ul><li><a href="/watch">Watch</a></li><li><a href="/listen">Listen</a></li><li><a href="/read">Read</a></li><li><a href="/app">Empyrean App</a></li></ul></div>
+      <div class="footer-col"><h4>The House</h4><ul><li><a href="/about">About Beatific Vision</a></li><li><a href="/cfi">Catholic Film Institute</a></li><li><a href="/listen">Catholica Cinematica</a></li><li><a href="/about#brand">Brand &amp; Marks</a></li></ul></div>
+      <div class="footer-col"><h4>Take Part</h4><ul><li><a href="/support">Subscribe</a></li><li><a href="https://secure.qgiv.com/for/catholicfilminstitute" target="_blank" rel="noopener">Donate to CFI</a></li><li><a href="mailto:rchmccarty@beatificvision.com">Contact</a></li><li><a href="/legal">Legal &amp; Trademarks</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© Anno Domini MMXXVI · Beatific Vision, LLC &amp; Beatific Vision, Inc.</span>
+      <span>BEATIFIC VISION® · Reg. USPTO · Serial 98488250 &amp; 98541662</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const navToggle = document.getElementById('nav-toggle');
+const navLinks = document.getElementById('nav-links');
+navToggle?.addEventListener('click', () => navLinks.classList.toggle('is-open'));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('is-open')));
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, idx) => {
+    if (entry.isIntersecting) { setTimeout(() => entry.target.classList.add('is-visible'), idx * 50); observer.unobserve(entry.target); }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+{
+  "name": "empyrean",
+  "productName": "Empyrean",
+  "version": "1.0.0",
+  "description": "The desktop application for Beatific Vision. The catalog, the player, the recovery of the cinema.",
+  "main": "src/main.js",
+  "author": {
+    "name": "Beatific Vision, LLC",
+    "email": "rchmccarty@beatificvision.com",
+    "url": "https://beatificvision.com"
+  },
+  "homepage": "https://beatificvision.com/app",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "build": "electron-builder",
+    "build:mac": "electron-builder --mac --x64 --arm64",
+    "build:win": "electron-builder --win --x64",
+    "build:linux": "electron-builder --linux --x64",
+    "dist": "electron-builder --mac --win --x64 --arm64 --publish=never"
+  },
+  "devDependencies": {
+    "electron": "^30.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.beatificvision.empyrean",
+    "productName": "Empyrean",
+    "copyright": "Copyright © 2026 Beatific Vision, LLC",
+    "directories": {
+      "buildResources": "build",
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.entertainment",
+      "target": [
+        { "target": "dmg", "arch": ["x64", "arm64"] },
+        { "target": "zip", "arch": ["x64", "arm64"] }
+      ],
+      "icon": "build/icon.icns",
+      "darkModeSupport": true,
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "entitlements": "build/entitlements.mac.plist",
+      "entitlementsInherit": "build/entitlements.mac.plist"
+    },
+    "dmg": {
+      "title": "Install Empyrean",
+      "backgroundColor": "#0A1340",
+      "window": { "width": 540, "height": 360 }
+    },
+    "win": {
+      "target": [
+        { "target": "nsis", "arch": ["x64"] },
+        { "target": "portable", "arch": ["x64"] }
+      ],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Empyrean"
+    },
+    "linux": {
+      "target": [
+        { "target": "AppImage", "arch": ["x64"] }
+      ],
+      "icon": "build/icon.png",
+      "category": "AudioVideo"
+    },
+    "publish": null
+  }
+}

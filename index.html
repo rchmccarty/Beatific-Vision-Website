@@ -1,0 +1,1897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beatific Vision — A Catholic Film Studio</title>
+<meta name="description" content="Beatific Vision is a Catholic film studio and integrated media enterprise founded to recover the cinema for the Catholic imagination. Watch. Listen. Read. Behold.">
+<meta property="og:title" content="Beatific Vision — A Catholic Film Studio">
+<meta property="og:description" content="An unfinished cathedral. A studio consecrated to the recovery of beauty.">
+<meta property="og:image" content="/logo.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/jpeg" href="/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Italianno&display=swap" rel="stylesheet">
+<style>
+/* Self-hosted fonts — no external CDN dependency */
+@font-face {
+  font-family: 'Italianno';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/italianno-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cinzel';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/cinzel-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cinzel';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/cinzel-latin-500-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cinzel';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/cinzel-latin-600-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cinzel';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/cinzel-latin-700-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/cormorant-garamond-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/cormorant-garamond-latin-400-italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/cormorant-garamond-latin-500-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/cormorant-garamond-latin-500-italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/cormorant-garamond-latin-600-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/cormorant-garamond-latin-600-italic.woff2') format('woff2');
+}
+
+:root {
+  --empyrean: #21368C;
+  --empyrean-deep: #182763;
+  --compline: #0A1340;
+  --compline-soft: #141C4E;
+  --gold: #C9A961;
+  --gold-light: #E5CB8E;
+  --gold-deep: #A88638;
+  --vellum: #FAF6EE;
+  --vellum-warm: #F2EADC;
+  --nimbus: #F2DDD0;
+  --vespers: #2C3E5F;
+  --ink: #1A1614;
+  --ink-soft: #4A4540;
+  --rule: rgba(26, 22, 20, 0.14);
+  --rule-light: rgba(250, 246, 238, 0.18);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--vellum);
+  color: var(--ink);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; background: none; border: none; cursor: pointer; color: inherit; }
+
+/* ============ TYPOGRAPHIC HELPERS ============ */
+.cinzel { font-family: 'Cinzel', serif; letter-spacing: 0.08em; text-transform: uppercase; }
+.italianno { font-family: 'Italianno', cursive; }
+.serif { font-family: 'Cormorant Garamond', serif; }
+.italic { font-style: italic; }
+
+.eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--empyrean);
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+.eyebrow::before, .eyebrow.center::after {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--gold);
+}
+.eyebrow.gold { color: var(--gold-light); }
+.eyebrow.gold::before, .eyebrow.gold::after { background: var(--gold); }
+.eyebrow.center { justify-content: center; }
+.eyebrow.no-rule::before { display: none; }
+
+/* ============ LAYOUT ============ */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+.container-narrow {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+@media (max-width: 720px) {
+  .container, .container-narrow { padding: 0 24px; }
+  body { font-size: 17px; }
+}
+
+section {
+  padding: 140px 0;
+  position: relative;
+}
+@media (max-width: 720px) { section { padding: 80px 0; } }
+
+/* ============ NAV ============ */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 20px 48px;
+  background: rgba(10, 19, 64, 0);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  transition: background 0.3s ease, backdrop-filter 0.3s ease, padding 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav.scrolled {
+  padding: 14px 48px;
+  background: rgba(10, 19, 64, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201, 169, 97, 0.2);
+}
+@media (max-width: 720px) {
+  .nav, .nav.scrolled { padding: 14px 20px; }
+}
+
+.nav-mark {
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+  color: var(--vellum);
+  text-decoration: none;
+  position: relative;
+}
+.nav-mark .ms {
+  font-family: 'Italianno', cursive;
+  font-size: 32px;
+  line-height: 1;
+  color: var(--gold-light);
+}
+.nav-mark .mc {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-left: 10px;
+  text-indent: 0.35em;
+  color: var(--vellum);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+.nav-links a {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--vellum);
+  position: relative;
+  padding: 6px 0;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--gold-light); }
+.nav-links a.cta {
+  border: 1px solid var(--gold);
+  padding: 8px 18px;
+  letter-spacing: 0.25em;
+  color: var(--gold-light);
+  transition: background 0.25s, color 0.25s;
+}
+.nav-links a.cta:hover {
+  background: var(--gold);
+  color: var(--compline);
+}
+
+.nav-toggle { display: none; }
+@media (max-width: 880px) {
+  .nav-links { display: none; }
+  .nav-links.is-open {
+    display: flex;
+    position: fixed;
+    top: 64px; left: 0; right: 0; bottom: 0;
+    background: rgba(10, 19, 64, 0.98);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    padding: 0 24px;
+  }
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 1px;
+    background: var(--vellum);
+    transition: transform 0.3s, opacity 0.3s;
+  }
+}
+
+/* ============ HERO ============ */
+.hero {
+  min-height: 100vh;
+  background: var(--compline);
+  color: var(--vellum);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 35%, rgba(33, 54, 140, 0.55), transparent 65%),
+    radial-gradient(ellipse at 20% 80%, rgba(201, 169, 97, 0.18), transparent 55%),
+    radial-gradient(ellipse at 85% 15%, rgba(242, 221, 208, 0.12), transparent 50%),
+    linear-gradient(180deg, #060B2E 0%, #0A1340 50%, #182763 100%);
+  z-index: 0;
+}
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.45) 0px, transparent 1.2px),
+    radial-gradient(circle at 28% 8%, rgba(255, 255, 255, 0.3) 0px, transparent 1px),
+    radial-gradient(circle at 47% 24%, rgba(255, 255, 255, 0.5) 0px, transparent 1.4px),
+    radial-gradient(circle at 73% 12%, rgba(255, 255, 255, 0.35) 0px, transparent 1px),
+    radial-gradient(circle at 88% 28%, rgba(255, 255, 255, 0.4) 0px, transparent 1.2px),
+    radial-gradient(circle at 16% 62%, rgba(255, 255, 255, 0.25) 0px, transparent 1px),
+    radial-gradient(circle at 38% 78%, rgba(255, 255, 255, 0.3) 0px, transparent 1px),
+    radial-gradient(circle at 64% 55%, rgba(255, 255, 255, 0.4) 0px, transparent 1.2px),
+    radial-gradient(circle at 82% 71%, rgba(255, 255, 255, 0.3) 0px, transparent 1px),
+    radial-gradient(circle at 92% 88%, rgba(255, 255, 255, 0.35) 0px, transparent 1px);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  opacity: 0.85;
+}
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 30%, rgba(6, 11, 46, 0.6) 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 900px;
+  padding: 100px 32px 48px;
+  animation: heroIn 1.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--gold-light);
+  margin-bottom: 36px;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+}
+.hero-eyebrow::before, .hero-eyebrow::after {
+  content: '';
+  width: 50px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.6;
+}
+
+.hero-script {
+  font-family: 'Italianno', cursive;
+  font-size: clamp(80px, 14vw, 200px);
+  line-height: 0.9;
+  color: var(--vellum);
+  font-weight: 400;
+  filter: drop-shadow(0 8px 40px rgba(10, 19, 64, 0.5));
+}
+
+.hero-cap {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(22px, 3vw, 40px);
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--vellum);
+  font-weight: 500;
+  margin-top: 18px;
+  text-indent: 0.45em;
+}
+
+.hero-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(20px, 2.4vw, 30px);
+  line-height: 1.4;
+  color: rgba(250, 246, 238, 0.92);
+  max-width: 720px;
+  margin: 56px auto 0;
+}
+.hero-tagline em { color: var(--gold-light); }
+
+.hero-cta-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 56px;
+  flex-wrap: wrap;
+}
+.btn {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 16px 32px;
+  border: 1px solid var(--gold);
+  color: var(--gold-light);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  text-indent: 0.35em;
+  display: inline-block;
+}
+.btn:hover {
+  background: var(--gold);
+  color: var(--compline);
+  letter-spacing: 0.4em;
+}
+.btn-primary {
+  background: var(--gold);
+  color: var(--compline);
+}
+.btn-primary:hover {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+}
+.btn-light {
+  border-color: var(--vellum);
+  color: var(--vellum);
+}
+.btn-light:hover {
+  background: var(--vellum);
+  color: var(--compline);
+  border-color: var(--vellum);
+}
+.btn-dark {
+  border-color: var(--empyrean);
+  color: var(--empyrean);
+}
+.btn-dark:hover {
+  background: var(--empyrean);
+  color: var(--vellum);
+}
+
+.hero-scroll-cue {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: rgba(250, 246, 238, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  animation: bob 2.4s ease-in-out infinite;
+}
+.hero-scroll-cue::after {
+  content: '';
+  width: 1px;
+  height: 32px;
+  background: linear-gradient(180deg, var(--gold) 0%, transparent 100%);
+}
+@keyframes bob {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+.hero-edge {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 80px;
+  background: linear-gradient(180deg, transparent 0%, var(--vellum) 100%);
+  z-index: 2;
+}
+
+/* ============ MANIFESTO ============ */
+.manifesto {
+  background: var(--vellum);
+  position: relative;
+}
+.manifesto::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  background: var(--gold);
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'><path d='M12 2l2.39 7.36H22l-6.18 4.49L18.18 22 12 17.27 5.82 22l2.36-8.15L2 9.36h7.61z'/></svg>") center/contain no-repeat;
+          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'><path d='M12 2l2.39 7.36H22l-6.18 4.49L18.18 22 12 17.27 5.82 22l2.36-8.15L2 9.36h7.61z'/></svg>") center/contain no-repeat;
+  margin-top: -30px;
+  display: none;
+}
+
+.manifesto-headline {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(36px, 5.5vw, 68px);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--compline);
+  line-height: 1.1;
+  text-align: center;
+  margin-bottom: 56px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.manifesto-headline em {
+  font-family: 'Italianno', cursive;
+  font-style: normal;
+  font-size: 1.45em;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--empyrean);
+  font-weight: 400;
+  vertical-align: -0.05em;
+  line-height: 0.85;
+  display: inline-block;
+}
+
+.manifesto-body {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: clamp(18px, 1.4vw, 21px);
+  line-height: 1.75;
+  color: var(--ink);
+  text-align: left;
+}
+.manifesto-body p { margin-bottom: 1.4em; }
+.manifesto-body p:first-child::first-letter {
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  font-size: 4.4em;
+  float: left;
+  line-height: 0.85;
+  margin: 0.05em 0.12em 0 0;
+  color: var(--empyrean);
+}
+
+.manifesto-pullquote {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(24px, 3.2vw, 38px);
+  line-height: 1.35;
+  color: var(--empyrean);
+  text-align: center;
+  max-width: 940px;
+  margin: 88px auto 88px;
+  padding: 0 48px;
+  position: relative;
+}
+.manifesto-pullquote::before, .manifesto-pullquote::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 1px;
+  background: var(--gold);
+  margin: 0 auto;
+}
+.manifesto-pullquote::before { margin-bottom: 32px; }
+.manifesto-pullquote::after { margin-top: 32px; }
+
+.manifesto-attribution {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 18px;
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* ============ PILLARS ============ */
+.pillars {
+  background: var(--vellum-warm);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.pillars-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+.pillars-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--compline);
+  line-height: 1.15;
+  margin-top: 24px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.pillars-lede {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(18px, 1.5vw, 22px);
+  color: var(--ink-soft);
+  max-width: 700px;
+  margin: 28px auto 0;
+  line-height: 1.55;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+@media (max-width: 1100px) { .pillars-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .pillars-grid { grid-template-columns: 1fr; } }
+
+.pillar {
+  background: var(--vellum);
+  border: 1px solid var(--rule);
+  padding: 40px 32px 32px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 360px;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s;
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+}
+.pillar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, transparent 80%, var(--gold) 80%, var(--gold) 100%);
+  opacity: 0;
+  transition: opacity 0.4s, transform 0.4s;
+  transform: translateY(100%);
+  z-index: 0;
+}
+.pillar:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 60px -28px rgba(10, 19, 64, 0.25);
+}
+.pillar:hover::before {
+  opacity: 1;
+  transform: translateY(96%);
+}
+.pillar > * { position: relative; z-index: 1; }
+
+.pillar-class {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  font-weight: 600;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.pillar-class::before {
+  content: '';
+  width: 14px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.pillar-icon {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 22px;
+  color: var(--empyrean);
+  transition: transform 0.4s;
+}
+.pillar:hover .pillar-icon { transform: scale(1.08) rotate(-2deg); }
+
+.pillar-title {
+  font-family: 'Cinzel', serif;
+  font-size: 22px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--compline);
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+.pillar-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  font-style: italic;
+  flex: 1;
+  margin-bottom: 24px;
+}
+.pillar-link {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--empyrean);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: gap 0.3s, color 0.3s;
+}
+.pillar:hover .pillar-link { gap: 16px; color: var(--gold-deep); }
+.pillar-link::after { content: '→'; font-size: 14px; }
+
+/* ============ FEATURED FILM ============ */
+.featured {
+  background: var(--compline);
+  color: var(--vellum);
+  position: relative;
+  overflow: hidden;
+}
+.featured::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 25% 30%, rgba(33, 54, 140, 0.45), transparent 55%),
+    radial-gradient(ellipse at 80% 75%, rgba(201, 169, 97, 0.16), transparent 55%);
+  pointer-events: none;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 900px) { .featured-grid { grid-template-columns: 1fr; gap: 48px; } }
+
+.featured-text .eyebrow { color: var(--gold-light); }
+.featured-text .eyebrow::before { background: var(--gold); }
+
+.featured-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(36px, 4.5vw, 56px);
+  line-height: 1.1;
+  color: var(--vellum);
+  margin: 24px 0 16px;
+  font-weight: 500;
+}
+.featured-meta {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 28px;
+  font-weight: 500;
+}
+.featured-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  line-height: 1.7;
+  color: rgba(250, 246, 238, 0.88);
+  margin-bottom: 36px;
+}
+
+.featured-poster {
+  aspect-ratio: 2 / 3;
+  background:
+    linear-gradient(180deg, rgba(10,19,64,0.05) 0%, rgba(10,19,64,0.55) 100%),
+    linear-gradient(135deg, #2a1810 0%, #4a2818 35%, #6e3a1e 70%, #c9a961 100%);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 48px 40px;
+  border: 1px solid rgba(201, 169, 97, 0.3);
+}
+.featured-poster::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 35% 25%, rgba(255, 220, 150, 0.35) 0%, transparent 55%);
+  pointer-events: none;
+}
+.featured-poster-top {
+  position: relative;
+  z-index: 2;
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--gold-light);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.featured-poster-top::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--gold);
+}
+.featured-poster-bottom {
+  position: relative;
+  z-index: 2;
+}
+.featured-poster-script {
+  font-family: 'Italianno', cursive;
+  font-size: clamp(48px, 6.5vw, 88px);
+  color: var(--vellum);
+  line-height: 0.95;
+  filter: drop-shadow(0 4px 18px rgba(0,0,0,0.5));
+}
+.featured-poster-cap {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(11px, 1.3vw, 16px);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--vellum);
+  font-weight: 500;
+  text-indent: 0.4em;
+  margin-top: 12px;
+}
+.featured-poster-meta {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: rgba(250, 246, 238, 0.7);
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(201, 169, 97, 0.4);
+}
+
+/* ============ CONSTELLATION ============ */
+.constellation {
+  background: var(--vellum);
+}
+.constellation-content {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.constellation-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--compline);
+  line-height: 1.15;
+  margin-top: 24px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.constellation-lede {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(18px, 1.5vw, 22px);
+  color: var(--ink-soft);
+  max-width: 720px;
+  margin: 28px auto 0;
+  line-height: 1.55;
+}
+.constellation-lede em { color: var(--empyrean); }
+
+.const-diagram {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.const-line {
+  width: 1px;
+  height: 28px;
+  background: var(--gold);
+  opacity: 0.5;
+}
+.const-line-h {
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.45;
+  width: 100%;
+  max-width: 800px;
+}
+
+.const-brand {
+  background: linear-gradient(135deg, var(--empyrean) 0%, var(--compline) 100%);
+  color: var(--vellum);
+  padding: 28px 56px;
+  border-radius: 2px;
+  text-align: center;
+  min-width: 380px;
+  box-shadow: 0 22px 50px -22px rgba(33, 54, 140, 0.4);
+}
+.const-brand .role {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.const-brand .name {
+  font-family: 'Italianno', cursive;
+  font-size: 56px;
+  line-height: 1;
+  color: var(--vellum);
+}
+.const-brand .cap {
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--vellum);
+  font-weight: 500;
+  text-indent: 0.4em;
+  margin-top: 4px;
+}
+
+.const-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+}
+.const-row.three { grid-template-columns: repeat(3, 1fr); max-width: 1000px; }
+@media (max-width: 720px) {
+  .const-row, .const-row.three { grid-template-columns: 1fr; }
+  .const-brand { min-width: 0; padding: 22px 32px; }
+  .const-brand .name { font-size: 42px; }
+}
+
+.const-node {
+  background: white;
+  border: 1px solid var(--rule);
+  padding: 22px 24px;
+  border-radius: 2px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(10,19,64,0.06);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.const-node:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 50px -22px rgba(10, 19, 64, 0.18);
+}
+.const-node.entity {
+  background: var(--compline);
+  border-color: var(--compline);
+  color: var(--vellum);
+}
+.const-node .role {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.const-node.entity .role { color: var(--gold-light); }
+.const-node:not(.entity) .role { color: var(--empyrean); }
+
+.const-node .ent {
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.const-node.entity .ent { color: var(--vellum); }
+.const-node:not(.entity) .ent { color: var(--compline); }
+
+.const-node .desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.45;
+}
+.const-node.entity .desc { color: rgba(250, 246, 238, 0.75); }
+.const-node:not(.entity) .desc { color: var(--ink-soft); }
+
+.const-future {
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px dashed var(--rule);
+  text-align: center;
+  max-width: 800px;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.const-future strong {
+  font-family: 'Cinzel', serif;
+  font-style: normal;
+  font-size: 10px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* ============ FOUNDER ============ */
+.founder {
+  background: var(--vellum-warm);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.founder-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 80px;
+  align-items: center;
+}
+@media (max-width: 900px) { .founder-grid { grid-template-columns: 1fr; gap: 48px; } }
+
+.founder-portrait {
+  aspect-ratio: 4 / 5;
+  background:
+    linear-gradient(180deg, rgba(10,19,64,0.0) 0%, rgba(10,19,64,0.45) 100%),
+    linear-gradient(135deg, #1f2a4a 0%, #2c3e5f 50%, #4a5575 100%);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 30px 60px -25px rgba(10, 19, 64, 0.35);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 36px;
+}
+.founder-portrait::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 40%, rgba(255, 230, 180, 0.18) 0%, transparent 55%);
+}
+.founder-portrait-overlay {
+  position: relative;
+  z-index: 2;
+}
+.founder-portrait .label {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.founder-portrait .label::before {
+  content: '';
+  width: 18px;
+  height: 1px;
+  background: var(--gold);
+}
+.founder-portrait .ph {
+  font-family: 'Italianno', cursive;
+  font-size: 52px;
+  color: var(--vellum);
+  line-height: 1;
+}
+
+.founder-text .ttl {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--compline);
+  line-height: 1.15;
+  margin: 24px 0 24px;
+}
+.founder-text .body {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--ink);
+}
+.founder-text .body p { margin-bottom: 1.2em; }
+.founder-text .body em { color: var(--empyrean); font-style: italic; }
+.founder-sig {
+  font-family: 'Italianno', cursive;
+  font-size: 44px;
+  color: var(--empyrean);
+  line-height: 1;
+  margin-top: 24px;
+  margin-bottom: 4px;
+}
+.founder-sig-meta {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 500;
+  text-indent: 0.3em;
+}
+
+/* ============ PODCAST ============ */
+.podcast {
+  background: var(--compline);
+  color: var(--vellum);
+  position: relative;
+  overflow: hidden;
+}
+.podcast::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 75% 25%, rgba(201, 169, 97, 0.18), transparent 55%),
+    radial-gradient(ellipse at 20% 75%, rgba(33, 54, 140, 0.4), transparent 55%);
+}
+
+.podcast-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 900px) { .podcast-grid { grid-template-columns: 1fr; gap: 48px; } }
+
+.podcast-text .eyebrow { color: var(--gold-light); }
+.podcast-text .eyebrow::before { background: var(--gold); }
+
+.podcast-title {
+  font-family: 'Italianno', cursive;
+  font-size: clamp(56px, 8vw, 110px);
+  color: var(--gold-light);
+  line-height: 1;
+  margin: 24px 0 16px;
+}
+.podcast-cap {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(14px, 1.6vw, 20px);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--vellum);
+  font-weight: 500;
+  text-indent: 0.4em;
+  margin-bottom: 32px;
+}
+.podcast-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  line-height: 1.7;
+  color: rgba(250, 246, 238, 0.88);
+  margin-bottom: 40px;
+}
+
+.podcast-card {
+  background: rgba(250, 246, 238, 0.05);
+  border: 1px solid rgba(201, 169, 97, 0.25);
+  border-radius: 2px;
+  padding: 36px 32px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.podcast-card .ep-label {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+.podcast-card .ep-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 24px;
+  line-height: 1.3;
+  color: var(--vellum);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+.podcast-card .ep-meta {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  color: rgba(250, 246, 238, 0.7);
+  font-style: italic;
+  margin-bottom: 28px;
+}
+.podcast-card .play {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  font-weight: 600;
+  cursor: pointer;
+  transition: gap 0.3s;
+}
+.podcast-card .play:hover { gap: 22px; }
+.podcast-card .play-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--compline);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.25s, transform 0.25s;
+}
+.podcast-card .play:hover .play-btn { background: var(--gold-light); transform: scale(1.05); }
+
+.podcast-platforms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(201, 169, 97, 0.2);
+}
+.podcast-platforms span {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(250, 246, 238, 0.55);
+  font-weight: 500;
+}
+
+/* ============ SUPPORT ============ */
+.support {
+  background: var(--vellum);
+  text-align: center;
+}
+.support-headline {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(34px, 5vw, 60px);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--compline);
+  line-height: 1.15;
+  margin-top: 24px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.support-headline em {
+  font-family: 'Italianno', cursive;
+  font-style: normal;
+  font-size: 1.4em;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--empyrean);
+  vertical-align: -0.05em;
+  display: inline-block;
+  line-height: 0.85;
+}
+.support-lede {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(18px, 1.5vw, 22px);
+  color: var(--ink-soft);
+  max-width: 720px;
+  margin: 32px auto 56px;
+  line-height: 1.55;
+}
+
+.support-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+@media (max-width: 800px) { .support-options { grid-template-columns: 1fr; } }
+
+.support-card {
+  background: white;
+  border: 1px solid var(--rule);
+  padding: 48px 40px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+.support-card .label {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  font-weight: 600;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.support-card .label::before {
+  content: '';
+  width: 18px;
+  height: 1px;
+  background: var(--gold);
+}
+.support-card h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 24px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--compline);
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+.support-card p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin-bottom: 28px;
+  flex: 1;
+}
+
+.email-form {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--rule);
+}
+.email-form input {
+  flex: 1;
+  padding: 14px 18px;
+  border: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  background: var(--vellum);
+  color: var(--ink);
+  outline: none;
+}
+.email-form input::placeholder { color: var(--ink-soft); font-style: italic; }
+.email-form button {
+  padding: 14px 26px;
+  background: var(--empyrean);
+  color: var(--vellum);
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-indent: 0.3em;
+  cursor: pointer;
+  transition: background 0.25s;
+}
+.email-form button:hover { background: var(--compline); }
+.email-form-note {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-top: 12px;
+  line-height: 1.5;
+}
+
+/* ============ FOOTER ============ */
+footer {
+  background: var(--compline);
+  color: var(--vellum);
+  padding: 80px 0 28px;
+  position: relative;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 60px;
+}
+@media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
+@media (max-width: 540px) { .footer-grid { grid-template-columns: 1fr; gap: 28px; } }
+
+.footer-brand .ms {
+  font-family: 'Italianno', cursive;
+  font-size: 56px;
+  color: var(--gold-light);
+  line-height: 1;
+}
+.footer-brand .mc {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--vellum);
+  font-weight: 500;
+  text-indent: 0.4em;
+  margin-top: 4px;
+}
+.footer-brand .blurb {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: rgba(250, 246, 238, 0.7);
+  margin-top: 22px;
+  line-height: 1.55;
+  max-width: 320px;
+}
+
+.footer-col h4 {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 8px; }
+.footer-col a {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  color: rgba(250, 246, 238, 0.78);
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--gold-light); }
+
+.footer-bottom {
+  border-top: 1px solid rgba(201, 169, 97, 0.2);
+  padding-top: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(250, 246, 238, 0.5);
+  font-weight: 500;
+}
+.footer-bottom a { color: rgba(250, 246, 238, 0.5); transition: color 0.2s; }
+.footer-bottom a:hover { color: var(--gold-light); }
+
+/* ============ ENTRANCE ANIMATIONS ============ */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============ UTILS ============ */
+.text-center { text-align: center; }
+</style>
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<nav class="nav" id="nav">
+  <a href="/" class="nav-mark" aria-label="Beatific Vision Home">
+    <span class="ms">Beatific</span>
+    <span class="mc">Vision</span>
+  </a>
+
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="/watch">Watch</a></li>
+    <li><a href="/listen">Listen</a></li>
+    <li><a href="/read">Read</a></li>
+    <li><a href="/app">Apps</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/cfi">CFI</a></li>
+    <li><a href="/support" class="cta">Support</a></li>
+  </ul>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-vignette"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">Anno Domini MMXXVI · Founded MMX</div>
+    <div class="hero-script">Beatific</div>
+    <div class="hero-cap">Vision</div>
+    <p class="hero-tagline">An unfinished cathedral. A studio consecrated to the recovery of beauty. <em>The cinema, returned to its proper end.</em></p>
+
+    <div class="hero-cta-row">
+      <a href="/watch" class="btn btn-primary">Enter the Catalog</a>
+      <a href="#manifesto" class="btn btn-light">The Vision</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll-cue">Behold</div>
+  <div class="hero-edge"></div>
+</header>
+
+<!-- ===================== MANIFESTO ===================== -->
+<section class="manifesto" id="manifesto">
+  <div class="container-narrow">
+    <h2 class="manifesto-headline" data-reveal>To beautify the screen<br>is to <em>evangelize</em><br>the age.</h2>
+
+    <div class="manifesto-body" data-reveal>
+      <p>Beatific Vision is a Catholic film studio and integrated media enterprise founded to recover, by craft and conviction, an art form long surrendered to the indifferent. Where the Hollywood machine produces volume, we pursue depth. Where it traffics in despair, we offer wonder. Where it counterfeits the sacred, we attempt the real thing.</p>
+
+      <p>Our mission is not modest: to disrupt the industrial complex that has confused beauty with spectacle and meaning with sensation, and to build, in its stead, an integrated infrastructure of Catholic creative work — distribution, representation, formation, finance — under one consecrated banner. The labor will be generational. The labor of cathedrals always was.</p>
+
+      <p>Beneath our banner, the <strong style="color: var(--empyrean);">Catholic Film Institute</strong> trains the next generation of filmmakers. <strong style="color: var(--empyrean);">Catholica Cinematica</strong> gathers the conversation. <strong style="color: var(--empyrean);">Empyrean</strong> carries the catalog. In time, a guild. In time, an agency. In time, a distributor — every limb of an industry, made new.</p>
+    </div>
+
+    <blockquote class="manifesto-pullquote" data-reveal>
+      The cinema is the great catechism of the modern world<br>— and we have surrendered the pulpit.
+      <div class="manifesto-attribution">— Foundational Premise</div>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ===================== PILLARS ===================== -->
+<section class="pillars" id="pillars">
+  <div class="container">
+    <div class="pillars-header" data-reveal>
+      <div class="eyebrow">The Four Pillars</div>
+      <h2 class="pillars-title">Watch. Listen. Read. Behold.</h2>
+      <p class="pillars-lede">Four ways to encounter the work — each presented with the reverence due a serious vocation, none condescending, all unmistakably Catholic.</p>
+    </div>
+
+    <div class="pillars-grid">
+      <a href="/watch" class="pillar" data-reveal>
+        <div class="pillar-class">Class XXXVIII · XLI · XLII</div>
+        <svg class="pillar-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="6" y="14" width="52" height="36" rx="2"/>
+          <path d="M28 24 L42 32 L28 40 Z" fill="currentColor"/>
+          <line x1="6" y1="22" x2="58" y2="22"/>
+          <line x1="6" y1="42" x2="58" y2="42"/>
+          <circle cx="11" cy="18" r="1.2" fill="currentColor"/>
+          <circle cx="53" cy="18" r="1.2" fill="currentColor"/>
+        </svg>
+        <h3 class="pillar-title">Watch</h3>
+        <p class="pillar-desc">Streaming the catalog under the Beatific Vision banner — features, documentaries, partner-org work, and original short-form. Cinema, consecrated.</p>
+        <span class="pillar-link">Enter the Catalog</span>
+      </a>
+
+      <a href="/listen" class="pillar" data-reveal>
+        <div class="pillar-class">Class XLI</div>
+        <svg class="pillar-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="26" y="10" width="12" height="28" rx="6"/>
+          <path d="M16 30 V36 a16 16 0 0 0 32 0 V30"/>
+          <line x1="32" y1="52" x2="32" y2="58"/>
+          <line x1="22" y1="58" x2="42" y2="58"/>
+        </svg>
+        <h3 class="pillar-title">Listen</h3>
+        <p class="pillar-desc">Catholica Cinematica — the public conversation of the new Catholic cinema. A joint venture of Beatific Vision and the Catholic Film Institute.</p>
+        <span class="pillar-link">Latest Episodes</span>
+      </a>
+
+      <a href="/read" class="pillar" data-reveal>
+        <div class="pillar-class">Class XLI</div>
+        <svg class="pillar-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M10 14 Q22 12 32 18 Q42 12 54 14 V52 Q42 50 32 56 Q22 50 10 52 Z"/>
+          <line x1="32" y1="18" x2="32" y2="56"/>
+          <line x1="16" y1="22" x2="26" y2="22"/>
+          <line x1="16" y1="28" x2="26" y2="28"/>
+          <line x1="16" y1="34" x2="26" y2="34"/>
+          <line x1="38" y1="22" x2="48" y2="22"/>
+          <line x1="38" y1="28" x2="48" y2="28"/>
+          <line x1="38" y1="34" x2="48" y2="34"/>
+        </svg>
+        <h3 class="pillar-title">Read</h3>
+        <p class="pillar-desc">Essays, criticism, journal entries, and prose presentations on cinema, theology, and the recovery of the Catholic imagination. Long-form, unhurried.</p>
+        <span class="pillar-link">The Journal</span>
+      </a>
+
+      <a href="/app" class="pillar" data-reveal>
+        <div class="pillar-class">Class IX</div>
+        <svg class="pillar-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M32 6 L32 42 M22 32 L32 42 L42 32"/>
+          <rect x="10" y="46" width="44" height="12" rx="2"/>
+          <circle cx="48" cy="52" r="1.2" fill="currentColor"/>
+        </svg>
+        <h3 class="pillar-title">Empyrean</h3>
+        <p class="pillar-desc">The desktop application. Where the catalog is held, the films are watched, and the platform is encountered as software. macOS &amp; Windows.</p>
+        <span class="pillar-link">Download Empyrean</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FEATURED FILM ===================== -->
+<section class="featured" id="featured">
+  <div class="container">
+    <div class="featured-grid">
+      <div class="featured-text" data-reveal>
+        <div class="eyebrow">Now Showing · The Catalog</div>
+        <h2 class="featured-title">The Most Beautiful Thing<br>This Side of Heaven</h2>
+        <div class="featured-meta">A Beatific Vision Documentary · MMXI · Restored MMXXVI</div>
+        <p class="featured-desc">The first feature-length documentary released under the Beatific Vision banner — an account of the re-introduction of the Traditional Latin Mass into the mainstream of the Archdiocese of Kansas City. Shot in 2011, restored and re-released for the new platform.</p>
+        <p class="featured-desc">A meditation on what is recovered when the Church recovers her own liturgical patrimony — and what was lost when she did not.</p>
+        <a href="/watch" class="btn btn-light">Watch the Film</a>
+      </div>
+
+      <div class="featured-poster" data-reveal>
+        <div class="featured-poster-top">A Beatific Vision Film</div>
+        <div class="featured-poster-bottom">
+          <div class="featured-poster-script">The Most</div>
+          <div class="featured-poster-script" style="font-size: 0.85em;">Beautiful Thing</div>
+          <div class="featured-poster-cap">This Side of Heaven</div>
+          <div class="featured-poster-meta">A documentary · Directed by Ryan C. McCarty<br>Original Release: MMXI · Restored Release: MMXXVI</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONSTELLATION ===================== -->
+<section class="constellation" id="architecture">
+  <div class="container">
+    <div class="constellation-content" data-reveal>
+      <div class="eyebrow center">The House &amp; Its Members</div>
+      <h2 class="constellation-title">One Brand. Two Entities.<br>Many Apostolates.</h2>
+      <p class="constellation-lede">Beatific Vision is a single brand encompassing two corporate entities — a holding LLC for <em>patrimony</em> and a Public Benefit Corporation for <em>operations</em> — together with their apostolates, joint ventures, sub-brands, and the future verticals of a Catholic creative industry.</p>
+    </div>
+
+    <div class="const-diagram" data-reveal>
+      <div class="const-brand">
+        <div class="role">The Brand</div>
+        <div class="name">Beatific Vision</div>
+        <div class="cap">Vision</div>
+      </div>
+
+      <div class="const-line"></div>
+      <div class="const-line-h" style="max-width: 600px;"></div>
+
+      <div class="const-row">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <div class="const-line"></div>
+          <div class="const-node entity" style="width: 100%;">
+            <div class="role">Patrimony Arm</div>
+            <div class="ent">Beatific Vision, LLC</div>
+            <div class="desc">Delaware single-member LLC · IP holding · sole member of the apostolate · the perpetual mission lock</div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <div class="const-line"></div>
+          <div class="const-node entity" style="width: 100%;">
+            <div class="role">Operations Arm</div>
+            <div class="ent">Beatific Vision, Inc.</div>
+            <div class="desc">Delaware Public Benefit Corporation · 10,000,000 authorized shares · the studio at industry scale</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="const-line" style="margin-top: 16px;"></div>
+      <div class="const-line-h"></div>
+
+      <div class="const-row three">
+        <div class="const-node">
+          <div class="role">Charitable Apostolate</div>
+          <div class="ent">Catholic Film Institute</div>
+          <div class="desc">501(c)(3) · formation, education, &amp; the patronage of Catholic filmmakers</div>
+        </div>
+        <div class="const-node">
+          <div class="role">Joint Venture</div>
+          <div class="ent">Catholica Cinematica</div>
+          <div class="desc">Podcast · the public conversation of the new Catholic cinema</div>
+        </div>
+        <div class="const-node">
+          <div class="role">Sub-Brand</div>
+          <div class="ent">Empyrean</div>
+          <div class="desc">Desktop application · macOS &amp; Windows · the place where the catalog is watched</div>
+        </div>
+      </div>
+
+      <div class="const-future">
+        <strong>Future Verticals</strong>
+        Beneath the Beatific Vision banner, additional verticals will be stood up as resources permit: a guild analog, a representation agency, a production-finance vehicle, a distribution arm, and a streaming platform. Each will operate within the single brand architecture and under the single visual identity.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOUNDER ===================== -->
+<section class="founder" id="founder">
+  <div class="container">
+    <div class="founder-grid">
+      <div class="founder-portrait" data-reveal>
+        <div class="founder-portrait-overlay">
+          <div class="label">Founder &amp; President</div>
+          <div class="ph">Ryan C.<br>McCarty</div>
+        </div>
+      </div>
+
+      <div class="founder-text" data-reveal>
+        <div class="eyebrow">Letter from the Founder</div>
+        <h2 class="ttl">An interrupted vocation,<br>resumed.</h2>
+        <div class="body">
+          <p>Beatific Vision was conceived in 2010. In 2011, we launched the Seraphim Screenwriting Competition — the first nationwide Catholic screenwriting contest — and released our first feature-length documentary, <em>The Most Beautiful Thing This Side of Heaven</em>. In 2012, we hosted an inaugural national Catholic conference and began development on a dramatic feature.</p>
+
+          <p>And then, for a season, the work was set aside. Law called. Family called. The studio waited. <em>The conviction never altered.</em></p>
+
+          <p>In 2024, we resumed. We re-secured the marks. We stood up the corporate architecture for perpetuity — a holding LLC for patrimony, a Public Benefit Corporation for operations, a 501(c)(3) for charitable formation. We are persuaded — fully, unreservedly persuaded — that beauty has not exhausted its evangelizing power. We mean to prove it, frame by frame.</p>
+        </div>
+        <div class="founder-sig">Ryan C. McCarty</div>
+        <div class="founder-sig-meta">Founder · Beatific Vision · Saint Charles, MO</div>
+
+        <a href="/about" class="btn btn-dark" style="margin-top: 32px;">Read the Full Vision</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PODCAST ===================== -->
+<section class="podcast" id="podcast">
+  <div class="container">
+    <div class="podcast-grid">
+      <div class="podcast-text" data-reveal>
+        <div class="eyebrow">Catholica Cinematica</div>
+        <div class="podcast-title">Catholica</div>
+        <div class="podcast-cap">Cinematica</div>
+        <p class="podcast-desc">A podcast on cinema, theology, and the recovery of the Catholic imagination. Hosted by founder Ryan C. McCarty. A joint venture of Beatific Vision and the Catholic Film Institute.</p>
+        <p class="podcast-desc" style="font-style: italic; color: var(--gold-light);">New episodes monthly. Available on Apple Podcasts, Spotify, and wherever podcasts are heard.</p>
+        <a href="/listen" class="btn">All Episodes</a>
+      </div>
+
+      <div class="podcast-card" data-reveal>
+        <div class="ep-label">Episode I · Inaugural</div>
+        <h3 class="ep-title">"Disrupting the Hollywood Industrial Complex"</h3>
+        <div class="ep-meta">A solo introduction · ~12 minutes · Anno Domini MMXXVI</div>
+
+        <a href="/listen" class="play">
+          <span class="play-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+          <span>Play the Episode</span>
+        </a>
+
+        <div class="podcast-platforms">
+          <span>Apple Podcasts</span>
+          <span>Spotify</span>
+          <span>RSS</span>
+          <span>PodPage</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SUPPORT ===================== -->
+<section class="support" id="support">
+  <div class="container">
+    <div data-reveal>
+      <div class="eyebrow center">Patronage</div>
+      <h2 class="support-headline">Build something that <em>outlasts</em> us.</h2>
+      <p class="support-lede">Beatific Vision is built for perpetuity — a heritage to be inherited, not a startup to be exited. Two ways to take part: be among the first to hear what comes next, or support the formation of the next generation of Catholic filmmakers through our charitable apostolate.</p>
+    </div>
+
+    <div class="support-options">
+      <div class="support-card" data-reveal>
+        <div class="label">For the Audience</div>
+        <h3>The Newsletter</h3>
+        <p>Premieres, releases, essays, and the work of the studio — sent rarely, never marketing-speak. The first to know when Empyrean opens, when the next film ships, when the inaugural festival is announced.</p>
+        <form class="email-form" onsubmit="event.preventDefault(); document.getElementById('email-feedback').textContent = 'Thank you. Welcome to the company.'; this.querySelector('input').value = '';">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="email-form-note" id="email-feedback">No spam. No sale of your address. One unsubscribe link in every message.</p>
+      </div>
+
+      <div class="support-card" data-reveal>
+        <div class="label">For the Mission</div>
+        <h3>Support the Apostolate</h3>
+        <p>The Catholic Film Institute is the 501(c)(3) charitable arm of Beatific Vision. Your gift forms the next generation of Catholic filmmakers — through scholarships, mentorship, our forthcoming festival, and the Journal of Catholic Cinema. <em>All gifts are tax-deductible.</em></p>
+        <a href="https://secure.qgiv.com/for/catholicfilminstitute" target="_blank" rel="noopener" class="btn btn-dark" style="align-self: flex-start;">Give to CFI</a>
+        <p class="email-form-note">Donations processed securely by Qgiv. The Catholic Film Institute is a Delaware nonprofit corporation, IRS Tax-Exempt EIN 99-4577977.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="ms">Beatific</div>
+        <div class="mc">Vision</div>
+        <p class="blurb">A Catholic film studio and integrated media enterprise. Founded MMX. Resumed MMXXIV. Saint Charles, Missouri.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>The Catalog</h4>
+        <ul>
+          <li><a href="/watch">Watch</a></li>
+          <li><a href="/listen">Listen</a></li>
+          <li><a href="/read">Read</a></li>
+          <li><a href="/app">Empyrean App</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>The House</h4>
+        <ul>
+          <li><a href="/about">About Beatific Vision</a></li>
+          <li><a href="/cfi">Catholic Film Institute</a></li>
+          <li><a href="/listen">Catholica Cinematica</a></li>
+          <li><a href="/about#brand">Brand &amp; Marks</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Take Part</h4>
+        <ul>
+          <li><a href="/support">Subscribe</a></li>
+          <li><a href="https://secure.qgiv.com/for/catholicfilminstitute" target="_blank" rel="noopener">Donate to CFI</a></li>
+          <li><a href="mailto:rchmccarty@beatificvision.com">Contact</a></li>
+          <li><a href="/legal">Legal &amp; Trademarks</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© Anno Domini MMXXVI · Beatific Vision, LLC &amp; Beatific Vision, Inc.</span>
+      <span>BEATIFIC VISION® · Reg. USPTO · Serial 98488250 &amp; 98541662</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ===== Scroll-triggered nav background =====
+const nav = document.getElementById('nav');
+const onScroll = () => {
+  if (window.scrollY > 60) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+};
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+// ===== Mobile nav toggle =====
+const navToggle = document.getElementById('nav-toggle');
+const navLinks = document.getElementById('nav-links');
+navToggle?.addEventListener('click', () => {
+  navLinks.classList.toggle('is-open');
+});
+// Close mobile nav on link click
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => navLinks.classList.remove('is-open'));
+});
+
+// ===== Reveal on scroll =====
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, idx) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('is-visible'), idx * 50);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catholic Film Institute — Beatific Vision</title>
+<meta name="description" content="The Catholic Film Institute is the 501(c)(3) charitable apostolate of Beatific Vision — formation, education, and patronage of the next generation of Catholic filmmakers.">
+<link rel="icon" type="image/jpeg" href="/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Italianno&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.cfi-prose { max-width: 720px; font-family: 'Cormorant Garamond', serif; font-size: 18px; line-height: 1.7; color: var(--ink); }
+.cfi-prose p { margin-bottom: 1.4em; }
+.cfi-prose em { color: var(--empyrean); }
+.cfi-prose strong { color: var(--compline); }
+
+.relationship-diagram {
+  display: grid;
+  grid-template-columns: 1fr 80px 1fr;
+  gap: 0; max-width: 800px; margin: 48px auto;
+  align-items: center;
+}
+@media (max-width: 700px) { .relationship-diagram { grid-template-columns: 1fr; gap: 16px; } }
+
+.entity-card {
+  background: var(--vellum); border: 1px solid var(--rule);
+  padding: 28px 24px; text-align: center;
+  border-left: 3px solid var(--empyrean);
+}
+.entity-card.cfi { border-left-color: var(--gold); }
+.entity-card .lbl {
+  font-family: 'Cinzel', serif; font-size: 8px;
+  letter-spacing: 0.32em; text-transform: uppercase;
+  color: var(--gold-deep); font-weight: 600; margin-bottom: 10px;
+}
+.entity-card .name {
+  font-family: 'Cinzel', serif; font-size: 14px;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--compline); font-weight: 600; margin-bottom: 8px;
+}
+.entity-card .desc {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 13px; color: var(--ink-soft); line-height: 1.5;
+}
+
+.diagram-arrow {
+  font-family: 'Cinzel', serif; font-size: 9px;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold-deep); font-weight: 600;
+  text-align: center; padding: 8px 0;
+  position: relative;
+}
+.diagram-arrow::before, .diagram-arrow::after {
+  content: ''; position: absolute; top: 50%;
+  width: 24px; height: 1px; background: var(--gold);
+}
+.diagram-arrow::before { left: 0; }
+.diagram-arrow::after { right: 0; }
+@media (max-width: 700px) {
+  .diagram-arrow::before, .diagram-arrow::after { display: none; }
+  .diagram-arrow { padding: 0; }
+}
+
+.cfi-stats {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 24px; margin: 48px 0;
+}
+@media (max-width: 700px) { .cfi-stats { grid-template-columns: 1fr; } }
+.stat {
+  background: var(--vellum-warm); padding: 28px 24px;
+  border-left: 2px solid var(--gold); text-align: center;
+}
+.stat .num {
+  font-family: 'Cinzel', serif; font-size: 36px;
+  color: var(--empyrean); font-weight: 600;
+  letter-spacing: 0.04em; margin-bottom: 8px;
+}
+.stat .lbl {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 14px; color: var(--ink-soft); line-height: 1.4;
+}
+</style>
+</head>
+<body>
+
+<nav class="nav solid">
+  <a href="/" class="nav-mark"><span class="ms">Beatific</span><span class="mc">Vision</span></a>
+  <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="/watch">Watch</a></li>
+    <li><a href="/listen">Listen</a></li>
+    <li><a href="/read">Read</a></li>
+    <li><a href="/app">Apps</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/cfi" class="active">CFI</a></li>
+    <li><a href="/support" class="cta">Support</a></li>
+  </ul>
+</nav>
+
+<section class="page-hero">
+  <div class="container page-hero-content">
+    <div class="eyebrow">The Charitable Apostolate</div>
+    <h1>Catholic Film <em>Institute</em></h1>
+    <p class="lede">The 501(c)(3) charitable apostolate of Beatific Vision — formation, education, and patronage of the next generation of Catholic filmmakers. <em>Wake. Watch. Witness.</em></p>
+  </div>
+  <div class="page-hero-edge"></div>
+</section>
+
+<!-- ===================== INTRO ===================== -->
+<section>
+  <div class="container-narrow">
+    <div data-reveal>
+      <div class="eyebrow">An Apostolate of Beatific Vision</div>
+      <h2 class="section-h2" style="text-align: left; margin-left: 0; margin-top: 24px; max-width: 720px;">The studio &amp; <em>the seminary.</em></h2>
+
+      <div class="cfi-prose" style="margin-top: 36px;">
+        <p>The Catholic Film Institute (CFI) is the charitable arm of the Beatific Vision house. Where the studio's commercial operations produce films and serve audiences, the Institute exists to <strong>form the makers</strong> — to train, equip, network, and nourish the Catholic creatives whose work the wider industry will eventually be unable to do without.</p>
+
+        <p>CFI's mission is the salvation of souls by making accessible to audiences worldwide the treasury of truths contained in the Deposit of Faith — through cinema and the visual arts. It accomplishes this mission by cultivating a community of visual storytellers united by a common creed and shared hope, who together work to showcase the splendors of creation crowned by grace.</p>
+
+        <p>CFI is established as a <strong>Delaware nonprofit corporation</strong>, recognized by the IRS under Section 501(c)(3). Its sole member is Beatific Vision, LLC — securing perpetual mission alignment between the studio and the apostolate, while preserving full independence in CFI's grantmaking, programming, and editorial decisions.</p>
+      </div>
+    </div>
+
+    <div class="relationship-diagram" data-reveal>
+      <div class="entity-card">
+        <div class="lbl">Patrimony Arm</div>
+        <div class="name">Beatific Vision, LLC</div>
+        <div class="desc">Sole member of CFI · IP holding · Perpetuity vehicle</div>
+      </div>
+      <div class="diagram-arrow">Sole<br>Member</div>
+      <div class="entity-card cfi">
+        <div class="lbl">Charitable Apostolate</div>
+        <div class="name">Catholic Film Institute</div>
+        <div class="desc">501(c)(3) · Education &amp; formation · EIN 99-4577977</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STATS / WHAT CFI DOES ===================== -->
+<section style="background: var(--vellum-warm); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);">
+  <div class="container-narrow">
+    <div class="section-header" data-reveal>
+      <div class="eyebrow center">What CFI Does</div>
+      <h2 class="section-h2">Form. Equip. Convene.</h2>
+      <p class="section-lede">CFI's programming roadmap spans the next decade — from membership organization through professional development, festival operations, awards, and the eventual establishment of a full-scale Catholic film conservatory.</p>
+    </div>
+
+    <div class="cfi-stats" data-reveal>
+      <div class="stat">
+        <div class="num">2,500</div>
+        <div class="lbl">Founding members targeted by year-end MMXXVI</div>
+      </div>
+      <div class="stat">
+        <div class="num">10,000</div>
+        <div class="lbl">Active professionals targeted by MMXXVII</div>
+      </div>
+      <div class="stat">
+        <div class="num">$25M+</div>
+        <div class="lbl">Ten-year vision: full-scale film school by MMXXXIV</div>
+      </div>
+    </div>
+
+    <div data-reveal style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 24px;">
+      <div>
+        <h3 style="font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--compline); font-weight: 600; margin-bottom: 14px;">Programs in Active Development</h3>
+        <ul style="font-family: 'Cormorant Garamond', serif; font-size: 16px; line-height: 1.7; color: var(--ink-soft); padding-left: 20px;">
+          <li>Inaugural Catholic Film Festival (Fall MMXXVI)</li>
+          <li>Seraphim Screenwriting Competition (resumed)</li>
+          <li>Summer Film Sprint competition</li>
+          <li>Journal of Catholic Cinema (quarterly)</li>
+          <li>Online workshops &amp; masterclasses</li>
+          <li>Independent film rating &amp; review system</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--compline); font-weight: 600; margin-bottom: 14px;">Forthcoming · MMXXVII–MMXXIX</h3>
+        <ul style="font-family: 'Cormorant Garamond', serif; font-size: 16px; line-height: 1.7; color: var(--ink-soft); padding-left: 20px;">
+          <li>Annual awards program for Catholic visual storytelling</li>
+          <li>Scholarship program for emerging filmmakers</li>
+          <li>Film school ranking system</li>
+          <li>Mentorship program: veterans &amp; newcomers</li>
+          <li>Regional chapters: Los Angeles, New York</li>
+          <li>CFI Conservatory program</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DONATE / EXTERNAL LINK ===================== -->
+<section style="background: var(--compline); color: var(--vellum); text-align: center;">
+  <div class="container-narrow">
+    <div data-reveal>
+      <div class="eyebrow gold center">Support the Apostolate</div>
+      <h2 class="section-h2" style="color: var(--vellum);">Form the next generation.</h2>
+      <p class="section-lede" style="color: rgba(250,246,238,0.85);">All gifts to the Catholic Film Institute are tax-deductible to the extent allowed by law. Multi-year commitments welcome. <em style="color: var(--gold-light);">Multi-decade commitments treasured.</em></p>
+
+      <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 40px;">
+        <a href="https://secure.qgiv.com/for/catholicfilminstitute" target="_blank" rel="noopener" class="btn btn-primary btn-large">Give to CFI</a>
+        <a href="https://catholicfilminstitute.org" target="_blank" rel="noopener" class="btn btn-light">CFI Main Site →</a>
+      </div>
+
+      <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 14px; color: rgba(250,246,238,0.65); margin-top: 32px; line-height: 1.55;">
+        Donations processed securely by Qgiv. The Catholic Film Institute, Inc. is a Delaware nonprofit corporation,<br>IRS Tax-Exempt EIN <strong style="color: var(--gold-light);">99-4577977</strong>.
+      </p>
+
+      <div style="margin-top: 56px; padding-top: 36px; border-top: 1px solid rgba(201,169,97,0.2); text-align: center;">
+        <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 16px; color: rgba(250,246,238,0.75); line-height: 1.6; max-width: 560px; margin: 0 auto 18px;">
+          For major gift conversations, named programs, multi-year pledges, and other patron inquiries:
+        </p>
+        <p style="font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--vellum); font-weight: 600; margin-bottom: 6px;">
+          Peter &amp; Marianna Caughron
+        </p>
+        <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 14px; color: rgba(250,246,238,0.7);">
+          Co-Directors of Development<br>
+          <a href="mailto:development@catholicfilminstitute.org" style="color: var(--gold-light); text-decoration: underline;">development@catholicfilminstitute.org</a> · +1 (888) CFI-2046
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="ms">Beatific</div>
+        <div class="mc">Vision</div>
+        <p class="blurb">A Catholic film studio and integrated media enterprise. Founded MMX. Resumed MMXXIV. Saint Charles, Missouri.</p>
+      </div>
+      <div class="footer-col"><h4>The Catalog</h4><ul><li><a href="/watch">Watch</a></li><li><a href="/listen">Listen</a></li><li><a href="/read">Read</a></li><li><a href="/app">Empyrean App</a></li></ul></div>
+      <div class="footer-col"><h4>The House</h4><ul><li><a href="/about">About Beatific Vision</a></li><li><a href="/cfi">Catholic Film Institute</a></li><li><a href="/listen">Catholica Cinematica</a></li><li><a href="/about#brand">Brand &amp; Marks</a></li></ul></div>
+      <div class="footer-col"><h4>Take Part</h4><ul><li><a href="/support">Subscribe</a></li><li><a href="https://secure.qgiv.com/for/catholicfilminstitute" target="_blank" rel="noopener">Donate to CFI</a></li><li><a href="mailto:rchmccarty@beatificvision.com">Contact</a></li><li><a href="/legal">Legal &amp; Trademarks</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© Anno Domini MMXXVI · Beatific Vision, LLC &amp; Beatific Vision, Inc.</span>
+      <span>BEATIFIC VISION® · Reg. USPTO · Serial 98488250 &amp; 98541662</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const navToggle = document.getElementById('nav-toggle');
+const navLinks = document.getElementById('nav-links');
+navToggle?.addEventListener('click', () => navLinks.classList.toggle('is-open'));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('is-open')));
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, idx) => {
+    if (entry.isIntersecting) { setTimeout(() => entry.target.classList.add('is-visible'), idx * 50); observer.unobserve(entry.target); }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Watch — Beatific Vision</title>
+<meta name="description" content="The Beatific Vision streaming catalog — features, documentaries, partner-organization films, and original short-form work. Cinema, consecrated.">
+<link rel="icon" type="image/jpeg" href="/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Italianno&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<style>
+/* Page-specific */
+.watch-class-badge {
+  display: inline-flex; align-items: center; gap: 14px;
+  font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase;
+  color: var(--gold-light); font-weight: 600;
+  background: rgba(201, 169, 97, 0.08);
+  border: 1px solid rgba(201, 169, 97, 0.3);
+  padding: 10px 18px; margin-top: 36px;
+}
+.watch-class-badge::before { content: ''; width: 16px; height: 1px; background: var(--gold); }
+
+/* Featured Hero Film */
+.featured-film { background: var(--compline); color: var(--vellum); padding: 100px 0; position: relative; overflow: hidden; }
+.featured-film::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 25% 30%, rgba(33,54,140,0.45), transparent 55%),
+    radial-gradient(ellipse at 80% 75%, rgba(201,169,97,0.16), transparent 55%);
+}
+.featured-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 1; }
+@media (max-width: 900px) { .featured-grid { grid-template-columns: 1fr; gap: 48px; } }
+.featured-text .eyebrow { color: var(--gold-light); }
+.featured-text .eyebrow::before { background: var(--gold); }
+.featured-title {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: clamp(36px, 4.5vw, 56px); line-height: 1.1;
+  color: var(--vellum); margin: 24px 0 16px; font-weight: 500;
+}
+.featured-meta {
+  font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase;
+  color: var(--gold-light); margin-bottom: 28px; font-weight: 500;
+}
+.featured-desc {
+  font-family: 'Cormorant Garamond', serif; font-size: 18px; line-height: 1.7;
+  color: rgba(250,246,238,0.88); margin-bottom: 24px;
+}
+.featured-actions { display: flex; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
+
+.featured-poster {
+  aspect-ratio: 2 / 3;
+  background: linear-gradient(180deg, rgba(10,19,64,0.05) 0%, rgba(10,19,64,0.55) 100%),
+              linear-gradient(135deg, #2a1810 0%, #4a2818 35%, #6e3a1e 70%, #c9a961 100%);
+  border-radius: 2px; position: relative; overflow: hidden;
+  box-shadow: 0 40px 80px -30px rgba(0,0,0,0.5);
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding: 48px 40px;
+  border: 1px solid rgba(201,169,97,0.3);
+}
+.featured-poster::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 35% 25%, rgba(255,220,150,0.35) 0%, transparent 55%);
+}
+.featured-poster-top {
+  position: relative; z-index: 2;
+  font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.4em; text-transform: uppercase;
+  font-weight: 600; color: var(--gold-light);
+  display: flex; align-items: center; gap: 12px;
+}
+.featured-poster-top::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+.featured-poster-bottom { position: relative; z-index: 2; }
+.featured-poster-script {
+  font-family: 'Italianno', cursive;
+  font-size: clamp(48px, 6.5vw, 88px);
+  color: var(--vellum); line-height: 0.95;
+  filter: drop-shadow(0 4px 18px rgba(0,0,0,0.5));
+}
+.featured-poster-cap {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(11px, 1.3vw, 16px);
+  letter-spacing: 0.4em; text-transform: uppercase;
+  color: var(--vellum); font-weight: 500; text-indent: 0.4em; margin-top: 12px;
+}
+.featured-poster-meta {
+  font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 14px;
+  color: rgba(250, 246, 238, 0.7); margin-top: 18px;
+  padding-top: 18px; border-top: 1px solid rgba(201, 169, 97, 0.4);
+}
+
+/* Section labels for catalog buckets */
+.catalog-section-header {
+  display: flex; align-items: baseline; justify-content: space-between;
+  margin-bottom: 36px; padding-bottom: 18px; border-bottom: 1px solid var(--rule);
+}
+.catalog-section-header h2 {
+  font-family: 'Cinzel', serif; font-size: 22px; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--compline); font-weight: 600;
+}
+.catalog-section-header .count {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 14px; color: var(--ink-soft);
+}
+
+/* Awaiting placeholder card */
+.awaiting-card {
+  background: var(--vellum-warm);
+  border: 1px dashed var(--gold); padding: 48px 36px;
+  text-align: center; display: flex; flex-direction: column; align-items: center;
+  font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--ink-soft);
+  min-height: 360px; justify-content: center;
+}
+.awaiting-card .label {
+  font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase;
+  color: var(--gold-deep); font-weight: 600; margin-bottom: 18px; font-style: normal;
+}
+.awaiting-card p { font-size: 15px; line-height: 1.5; max-width: 240px; }
+</style>
+</head>
+<body>
+
+<nav class="nav solid" id="nav">
+  <a href="/" class="nav-mark"><span class="ms">Beatific</span><span class="mc">Vision</span></a>
+  <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="/watch" class="active">Watch</a></li>
+    <li><a href="/listen">Listen</a></li>
+    <li><a href="/read">Read</a></li>
+    <li><a href="/app">Apps</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/cfi">CFI</a></li>
+    <li><a href="/support" class="cta">Support</a></li>
+  </ul>
+</nav>
+
+<section class="page-hero">
+  <div class="container page-hero-content">
+    <div class="eyebrow">The Catalog</div>
+    <h1>Watch.</h1>
+    <p class="lede">Streaming the catalog under the Beatific Vision banner — features, documentaries, partner-organization work, and original short-form. <em>Cinema, consecrated.</em></p>
+    <div class="watch-class-badge">USPTO Classes 38 · 41 · 42 — Streaming, Broadcasting, &amp; SaaS</div>
+  </div>
+  <div class="page-hero-edge"></div>
+</section>
+
+<!-- ===================== FEATURED FILM ===================== -->
+<section class="featured-film">
+  <div class="container">
+    <div class="featured-grid">
+      <div class="featured-text" data-reveal>
+        <div class="eyebrow">Now Showing · Feature Documentary</div>
+        <h2 class="featured-title">The Most Beautiful Thing<br>This Side of Heaven</h2>
+        <div class="featured-meta">A Beatific Vision Documentary · MMXI · Restored MMXXVI · 64 Minutes</div>
+        <p class="featured-desc">The first feature-length documentary released under the Beatific Vision banner — an account of the re-introduction of the Traditional Latin Mass into the mainstream of the Archdiocese of Kansas City, Missouri. Produced over 18 months with cooperation from priests, parishioners, and visiting laity, the film is a meditation on what is recovered when the Church recovers her own liturgical patrimony, and what was lost when she did not.</p>
+        <p class="featured-desc" style="font-style: italic; color: var(--gold-light);">Originally released 2011. Restored from the original masters and re-released for the new platform in 2026.</p>
+        <div class="featured-actions">
+          <a href="#" onclick="event.preventDefault(); alert('Streaming launches with Empyrean — May 2026'); return false;" class="btn btn-primary">▷ Watch the Film</a>
+          <a href="/app" class="btn btn-light">Watch on Empyrean</a>
+        </div>
+      </div>
+      <div class="featured-poster" data-reveal>
+        <div class="featured-poster-top">A Beatific Vision Film</div>
+        <div class="featured-poster-bottom">
+          <div class="featured-poster-script">The Most</div>
+          <div class="featured-poster-script" style="font-size: 0.85em;">Beautiful Thing</div>
+          <div class="featured-poster-cap">This Side of Heaven</div>
+          <div class="featured-poster-meta">A documentary · Directed by Ryan C. McCarty<br>Original Release: MMXI · Restored Release: MMXXVI</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DOCUMENTARIES ===================== -->
+<section>
+  <div class="container">
+    <div class="catalog-section-header">
+      <h2>Documentaries</h2>
+      <span class="count">1 title · more in development</span>
+    </div>
+
+    <div class="card-grid cols-4">
+      <a href="#" onclick="event.preventDefault(); alert('Streaming launches with Empyrean \u2014 May 2026'); return false;" class="card" data-reveal>
+        <div class="card-poster documentary">
+          <div class="card-poster-top">A Beatific Vision Film</div>
+          <div class="card-poster-bottom">
+            <div class="card-poster-script">The Most<br>Beautiful Thing</div>
+            <div class="card-poster-cap">This Side of Heaven</div>
+            <div class="card-poster-meta">Documentary · MMXI</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">Documentary · 64 min · MMXI</div>
+          <div class="card-title">The Most Beautiful Thing This Side of Heaven</div>
+          <div class="card-desc">The Traditional Latin Mass returns to the Archdiocese of Kansas City — a meditation on what was lost and what is being recovered.</div>
+          <span class="card-cta">Watch</span>
+        </div>
+      </a>
+
+      <div class="awaiting-card" data-reveal>
+        <div class="label">In Development</div>
+        <p>The next documentary release is in production. <em>Subscribe to be notified.</em></p>
+      </div>
+
+      <div class="awaiting-card" data-reveal>
+        <div class="label">In Development</div>
+        <p>Beatific Vision documentary slate forthcoming.</p>
+      </div>
+
+      <div class="awaiting-card" data-reveal>
+        <div class="label">In Development</div>
+        <p>Beatific Vision documentary slate forthcoming.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PARTNER ORGANIZATIONS ===================== -->
+<section style="background: var(--vellum-warm); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);">
+  <div class="container">
+    <div class="catalog-section-header">
+      <h2>From Our Partners</h2>
+      <span class="count">Awaiting catalog · CFI partner organizations</span>
+    </div>
+
+    <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 17px; color: var(--ink-soft); max-width: 700px; margin-bottom: 40px;">
+      Beatific Vision streams selected work from Catholic creative organizations whose mission aligns with our own. Each partner is presented in their own voice, with full attribution and licensing transparency. The catalog grows quarterly.
+    </p>
+
+    <div class="card-grid cols-4">
+      <div class="awaiting-card" data-reveal>
+        <div class="label">Partner Catalog</div>
+        <p>Awaiting partner-organization video files and credit information.</p>
+      </div>
+      <div class="awaiting-card" data-reveal>
+        <div class="label">Partner Catalog</div>
+        <p>Awaiting partner-organization video files and credit information.</p>
+      </div>
+      <div class="awaiting-card" data-reveal>
+        <div class="label">Partner Catalog</div>
+        <p>Awaiting partner-organization video files and credit information.</p>
+      </div>
+      <div class="awaiting-card" data-reveal>
+        <div class="label">Partner Catalog</div>
+        <p>Awaiting partner-organization video files and credit information.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ORIGINAL SHORTS ===================== -->
+<section>
+  <div class="container">
+    <div class="catalog-section-header">
+      <h2>Original Short-Form</h2>
+      <span class="count">In production · MMXXVI slate</span>
+    </div>
+
+    <div class="card-grid cols-4">
+      <div class="awaiting-card" data-reveal>
+        <div class="label">Coming MMXXVI</div>
+        <p>Beatific Vision's inaugural slate of original short-form work is in production.</p>
+      </div>
+      <div class="awaiting-card" data-reveal>
+        <div class="label">Coming MMXXVI</div>
+        <p>Beatific Vision's inaugural slate of original short-form work is in production.</p>
+      </div>
+      <div class="awaiting-card" data-reveal>
+        <div class="label">Coming MMXXVI</div>
+        <p>Beatific Vision's inaugural slate of original short-form work is in production.</p>
+      </div>
+      <div class="awaiting-card" data-reveal>
+        <div class="label">Coming MMXXVI</div>
+        <p>Beatific Vision's inaugural slate of original short-form work is in production.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HOW TO WATCH ===================== -->
+<section style="background: var(--compline); color: var(--vellum); text-align: center;">
+  <div class="container-narrow">
+    <div data-reveal>
+      <div class="eyebrow gold center">How to Watch</div>
+      <h2 style="font-family: 'Cinzel', serif; font-size: clamp(32px, 4.5vw, 52px); font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--vellum); line-height: 1.15; margin-top: 24px;">Two ways to watch the catalog.</h2>
+      <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 18px; color: rgba(250,246,238,0.85); margin: 28px auto 56px; line-height: 1.6;">Streaming launches in two registers — on the web, immediately, via this site; and on the desktop, with our native application <em style="color: var(--gold-light); font-style: italic;">Empyrean</em>, for the highest-fidelity playback experience.</p>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 720px; margin: 0 auto;">
+        <div style="background: rgba(250,246,238,0.05); border: 1px solid rgba(201,169,97,0.25); padding: 32px 28px; text-align: left;">
+          <div class="eyebrow gold" style="margin-bottom: 12px;">In the Browser</div>
+          <h3 style="font-family: 'Cinzel', serif; font-size: 18px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--vellum); font-weight: 600; margin-bottom: 10px;">Watch on the Web</h3>
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 15px; color: rgba(250,246,238,0.78); line-height: 1.55;">Any modern browser. Any device. Stream the full catalog from beatificvision.com.</p>
+        </div>
+        <div style="background: rgba(250,246,238,0.05); border: 1px solid rgba(201,169,97,0.25); padding: 32px 28px; text-align: left;">
+          <div class="eyebrow gold" style="margin-bottom: 12px;">On the Desktop</div>
+          <h3 style="font-family: 'Cinzel', serif; font-size: 18px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--vellum); font-weight: 600; margin-bottom: 10px;">Watch on Empyrean</h3>
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 15px; color: rgba(250,246,238,0.78); line-height: 1.55;">Native macOS &amp; Windows. Optimized for the cinema-at-home experience. <a href="/app" style="color: var(--gold-light); text-decoration: underline;">Download →</a></p>
+        </div>
+      </div>
+
+      <p style="margin-top: 56px; font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(250,246,238,0.5); font-weight: 500;">Streaming services rendered under the BEATIFIC VISION® mark · USPTO Classes 38, 41, 42</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="ms">Beatific</div>
+        <div class="mc">Vision</div>
+        <p class="blurb">A Catholic film studio and integrated media enterprise. Founded MMX. Resumed MMXXIV. Saint Charles, Missouri.</p>
+      </div>
+      <div class="footer-col">
+        <h4>The Catalog</h4>
+        <ul>
+          <li><a href="/watch">Watch</a></li>
+          <li><a href="/listen">Listen</a></li>
+          <li><a href="/read">Read</a></li>
+          <li><a href="/app">Empyrean App</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>The House</h4>
+        <ul>
+          <li><a href="/about">About Beatific Vision</a></li>
+          <li><a href="/cfi">Catholic Film Institute</a></li>
+          <li><a href="/listen">Catholica Cinematica</a></li>
+          <li><a href="/about#brand">Brand &amp; Marks</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Take Part</h4>
+        <ul>
+          <li><a href="/support">Subscribe</a></li>
+          <li><a href="https://secure.qgiv.com/for/catholicfilminstitute" target="_blank" rel="noopener">Donate to CFI</a></li>
+          <li><a href="mailto:rchmccarty@beatificvision.com">Contact</a></li>
+          <li><a href="/legal">Legal &amp; Trademarks</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© Anno Domini MMXXVI · Beatific Vision, LLC &amp; Beatific Vision, Inc.</span>
+      <span>BEATIFIC VISION® · Reg. USPTO · Serial 98488250 &amp; 98541662</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const navToggle = document.getElementById('nav-toggle');
+const navLinks = document.getElementById('nav-links');
+navToggle?.addEventListener('click', () => navLinks.classList.toggle('is-open'));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('is-open')));
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, idx) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('is-visible'), idx * 50);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

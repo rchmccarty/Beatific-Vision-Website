@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — Beatific Vision</title>
+<meta name="description" content="Take part in the recovery of the cinema for the Catholic imagination. Subscribe to the newsletter, support the Catholic Film Institute apostolate, or speak with us about patron-level engagement.">
+<link rel="icon" type="image/jpeg" href="/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Italianno&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.support-options-full {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 28px; margin-top: 48px;
+}
+@media (max-width: 1000px) { .support-options-full { grid-template-columns: 1fr; } }
+
+.support-card-full {
+  background: var(--vellum); border: 1px solid var(--rule);
+  padding: 48px 40px; display: flex; flex-direction: column;
+  position: relative; overflow: hidden;
+}
+.support-card-full::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; width: 4px; height: 60px;
+  background: var(--gold);
+}
+.support-card-full .label {
+  font-family: 'Cinzel', serif; font-size: 9px;
+  letter-spacing: 0.32em; text-transform: uppercase;
+  color: var(--gold-deep); font-weight: 600; margin-bottom: 16px;
+}
+.support-card-full h3 {
+  font-family: 'Cinzel', serif; font-size: 22px;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--compline); font-weight: 600; margin-bottom: 18px;
+}
+.support-card-full p {
+  font-family: 'Cormorant Garamond', serif; font-size: 16px;
+  line-height: 1.6; color: var(--ink-soft); margin-bottom: 24px; flex: 1;
+}
+.support-card-full p em { color: var(--empyrean); font-style: italic; }
+
+.email-form-full {
+  display: flex; flex-direction: column; gap: 14px; margin-top: 8px;
+}
+.email-form-full input, .email-form-full select {
+  padding: 14px 18px; border: 1px solid var(--rule);
+  font-family: 'Cormorant Garamond', serif; font-size: 16px;
+  background: var(--vellum); color: var(--ink); outline: none;
+  transition: border-color 0.25s;
+}
+.email-form-full input:focus, .email-form-full select:focus { border-color: var(--gold); }
+.email-form-full input::placeholder { color: var(--ink-soft); font-style: italic; }
+.email-form-full button {
+  padding: 16px 26px;
+  background: var(--empyrean); color: var(--vellum);
+  font-family: 'Cinzel', serif; font-size: 11px;
+  letter-spacing: 0.32em; text-transform: uppercase; font-weight: 600;
+  text-indent: 0.32em; cursor: pointer; transition: background 0.25s;
+  border: none;
+}
+.email-form-full button:hover { background: var(--compline); }
+.form-note {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 13px; color: var(--ink-soft); line-height: 1.5; margin-top: 14px;
+}
+
+/* Major Gift block */
+.major-gift {
+  background: var(--vellum-warm); padding: 48px 40px;
+  border-left: 3px solid var(--gold);
+}
+.major-gift h3 {
+  font-family: 'Cinzel', serif; font-size: 22px;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--compline); font-weight: 600; margin-bottom: 18px;
+}
+.major-gift p {
+  font-family: 'Cormorant Garamond', serif; font-size: 17px;
+  line-height: 1.65; color: var(--ink); margin-bottom: 16px;
+}
+.major-gift .contact-block {
+  margin-top: 28px; padding: 24px 28px;
+  background: var(--vellum); border-left: 2px solid var(--empyrean);
+}
+.major-gift .name {
+  font-family: 'Cinzel', serif; font-size: 14px;
+  letter-spacing: 0.06em; color: var(--compline); font-weight: 600;
+}
+.major-gift .ttl {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 14px; color: var(--ink-soft); margin: 4px 0 12px;
+}
+.major-gift .lines {
+  font-family: 'Cormorant Garamond', serif; font-size: 15px;
+  line-height: 1.6;
+}
+.major-gift .lines a { color: var(--empyrean); text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<nav class="nav solid">
+  <a href="/" class="nav-mark"><span class="ms">Beatific</span><span class="mc">Vision</span></a>
+  <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="/watch">Watch</a></li>
+    <li><a href="/listen">Listen</a></li>
+    <li><a href="/read">Read</a></li>
+    <li><a href="/app">Apps</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/cfi">CFI</a></li>
+    <li><a href="/support" class="cta active">Support</a></li>
+  </ul>
+</nav>
+
+<section class="page-hero">
+  <div class="container page-hero-content">
+    <div class="eyebrow">Patronage</div>
+    <h1>Take <em>part.</em></h1>
+    <p class="lede">Beatific Vision is built for perpetuity — a heritage to be inherited, not a startup to be exited. <em>Three ways to take part in the work.</em></p>
+  </div>
+  <div class="page-hero-edge"></div>
+</section>
+
+<!-- ===================== THREE OPTIONS ===================== -->
+<section>
+  <div class="container">
+    <div class="support-options-full">
+
+      <div class="support-card-full" data-reveal>
+        <div class="label">For the Audience</div>
+        <h3>The Newsletter</h3>
+        <p>Premieres, releases, essays from the journal, the work of the studio. Sent rarely, never marketing-speak. The first to know when Empyrean opens, when the next film ships, when the inaugural festival is announced. <em>For those who want to follow what we make.</em></p>
+        <form class="email-form-full" onsubmit="event.preventDefault(); document.getElementById('email-feedback-1').textContent = 'Thank you. Welcome to the company.'; this.querySelector('input[type=email]').value = '';">
+          <input type="email" name="email" placeholder="Your email address" required>
+          <input type="text" name="name" placeholder="Your name (optional)">
+          <button type="submit">Subscribe to the Newsletter</button>
+        </form>
+        <p class="form-note" id="email-feedback-1">No spam. No sale of your address. One unsubscribe link in every message.</p>
+      </div>
+
+      <div class="support-card-full" data-reveal>
+        <div class="label">For the Mission</div>
+        <h3>Support the Apostolate</h3>
+        <p>The Catholic Film Institute is the 501(c)(3) charitable arm of Beatific Vision. Your gift forms the next generation of Catholic filmmakers — through scholarships, mentorship, our forthcoming festival, the Journal of Catholic Cinema, and eventually the Conservatory program. <em>All gifts are tax-deductible.</em></p>
+        <a href="https://secure.qgiv.com/for/catholicfilminstitute" target="_blank" rel="noopener" class="btn btn-dark" style="align-self: flex-start; margin-top: 8px;">Give to CFI</a>
+        <p class="form-note">Donations processed securely by Qgiv. The Catholic Film Institute is a Delaware nonprofit corporation, IRS Tax-Exempt EIN 99-4577977. CFI is the charitable apostolate of Beatific Vision.</p>
+      </div>
+
+      <div class="support-card-full" data-reveal>
+        <div class="label">For the Studio</div>
+        <h3>Become a Patron</h3>
+        <p>Patron-level engagement with Beatific Vision, Inc. — equity participation in the Public Benefit Corporation, founding patronage of named productions, advisory roles. <em>For those who would build alongside us.</em></p>
+        <a href="mailto:rchmccarty@beatificvision.com?subject=Patron%20Inquiry" class="btn btn-dark" style="align-self: flex-start; margin-top: 8px;">Begin a Conversation</a>
+        <p class="form-note">Investor inquiries are handled directly by the founder. Securities offerings, when made, will be conducted under applicable U.S. federal and state securities laws.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MAJOR GIFT ===================== -->
+<section style="background: var(--vellum-warm); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);">
+  <div class="container-narrow">
+    <div data-reveal>
+      <div class="eyebrow center">Named Programs &amp; Major Gifts</div>
+      <h2 class="section-h2 text-center" style="text-align: center;">Build alongside us.</h2>
+      <p class="section-lede" style="text-align: center;">For named scholarships, named programs, multi-year pledges, and the Founding Benefactor circle, we welcome direct conversation with our Co-Directors of Development at the Catholic Film Institute.</p>
+    </div>
+
+    <div class="major-gift" data-reveal style="margin-top: 36px;">
+      <h3>Major Gift Inquiries — CFI</h3>
+      <p>The Catholic Film Institute publishes a comprehensive Case for Support detailing the apostolate's ten-year vision, programmatic roadmap, and giving opportunities — including <strong>Charter Member</strong> ($10,000+), <strong>Founding Partner</strong> ($25,000+), <strong>Leadership Circle</strong> ($50,000+), and <strong>Founding Benefactor</strong> ($100,000+) tiers.</p>
+
+      <div class="contact-block">
+        <div class="name">Peter &amp; Marianna Caughron</div>
+        <div class="ttl">Co-Directors of Development · The Catholic Film Institute, Inc.</div>
+        <div class="lines">
+          <a href="mailto:development@catholicfilminstitute.org">development@catholicfilminstitute.org</a><br>
+          Toll Free: <strong style="color: var(--compline);">+1 (888) CFI-2046</strong><br>
+          1890 1st Capitol Drive #735, Saint Charles, MO 63301<br>
+          IRS Tax-Exempt EIN 99-4577977
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section style="background: var(--compline); color: var(--vellum);">
+  <div class="container-narrow text-center">
+    <div data-reveal>
+      <div class="eyebrow gold center">Direct Contact</div>
+      <h2 class="section-h2" style="color: var(--vellum);">Speak with the founder.</h2>
+      <p class="section-lede" style="color: rgba(250,246,238,0.85);">For brand inquiries, partnership conversations, press, and patron-level engagement with Beatific Vision, Inc., reach the founder directly.</p>
+
+      <div style="margin-top: 40px; display: inline-flex; flex-direction: column; gap: 12px; padding: 28px 36px; background: rgba(250,246,238,0.05); border: 1px solid rgba(201,169,97,0.25); border-radius: 4px; text-align: left;">
+        <p style="font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--vellum); font-weight: 600;">Ryan C. McCarty</p>
+        <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 14px; color: rgba(250,246,238,0.75);">Founder &amp; Sole Member, Beatific Vision, LLC<br>Founder &amp; President, Beatific Vision, Inc. (PBC)</p>
+        <p style="font-family: 'Cormorant Garamond', serif; font-size: 15px; color: rgba(250,246,238,0.85); margin-top: 8px;">
+          <a href="mailto:rchmccarty@beatificvision.com" style="color: var(--gold-light); text-decoration: underline;">rchmccarty@beatificvision.com</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="ms">Beatific</div>
+        <div class="mc">Vision</div>
+        <p class="blurb">A Catholic film studio and integrated media enterprise. Founded MMX. Resumed MMXXIV. Saint Charles, Missouri.</p>
+      </div>
+      <div class="footer-col"><h4>The Catalog</h4><ul><li><a href="/watch">Watch</a></li><li><a href="/listen">Listen</a></li><li><a href="/read">Read</a></li><li><a href="/app">Empyrean App</a></li></ul></div>
+      <div class="footer-col"><h4>The House</h4><ul><li><a href="/about">About Beatific Vision</a></li><li><a href="/cfi">Catholic Film Institute</a></li><li><a href="/listen">Catholica Cinematica</a></li><li><a href="/about#brand">Brand &amp; Marks</a></li></ul></div>
+      <div class="footer-col"><h4>Take Part</h4><ul><li><a href="/support">Subscribe</a></li><li><a href="https://secure.qgiv.com/for/catholicfilminstitute" target="_blank" rel="noopener">Donate to CFI</a></li><li><a href="mailto:rchmccarty@beatificvision.com">Contact</a></li><li><a href="/legal">Legal &amp; Trademarks</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© Anno Domini MMXXVI · Beatific Vision, LLC &amp; Beatific Vision, Inc.</span>
+      <span>BEATIFIC VISION® · Reg. USPTO · Serial 98488250 &amp; 98541662</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const navToggle = document.getElementById('nav-toggle');
+const navLinks = document.getElementById('nav-links');
+navToggle?.addEventListener('click', () => navLinks.classList.toggle('is-open'));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('is-open')));
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, idx) => {
+    if (entry.isIntersecting) { setTimeout(() => entry.target.classList.add('is-visible'), idx * 50); observer.unobserve(entry.target); }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

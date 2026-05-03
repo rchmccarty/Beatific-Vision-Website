@@ -1,0 +1,20 @@
+# Build outputs (Electron-builder produces huge unpacked folders here)
+dist/
+out/
+empyrean-app/dist/
+empyrean-app/out/
+
+# Dependencies
+node_modules/
+empyrean-app/node_modules/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Logs & env
+*.log
+npm-debug.log*
+.env
+.env.local
+.vercel
