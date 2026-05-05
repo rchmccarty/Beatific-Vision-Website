@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>On Restoring "The Most Beautiful Thing This Side of Heaven" — The Journal · Beatific Vision</title>
+<meta name="description" content="A director's note on the 2011 documentary The Most Beautiful Thing This Side of Heaven — its subject, its makers, and the rationale for its restoration and re-release in 2026.">
+<link rel="icon" type="image/jpeg" href="/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Italianno&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.back-to-journal {
+  font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase;
+  color: var(--gold-deep); text-decoration: none; font-weight: 600;
+  display: inline-block; margin-bottom: 32px;
+}
+.back-to-journal:hover { color: var(--empyrean); }
+
+.article-hero {
+  background: var(--vellum); border-bottom: 1px solid var(--rule);
+  padding: 80px 0 56px;
+}
+.article-hero .eyebrow {
+  font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase;
+  color: var(--gold-deep); font-weight: 600; margin-bottom: 18px;
+  display: flex; align-items: center; gap: 12px;
+}
+.article-hero .eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+.article-hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(28px, 4.2vw, 50px); font-weight: 500;
+  letter-spacing: 0.03em; text-transform: uppercase;
+  color: var(--compline); line-height: 1.2;
+  margin-bottom: 28px;
+}
+.article-byline {
+  font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--ink-soft); font-weight: 500;
+}
+.article-byline strong { color: var(--compline); font-weight: 600; }
+
+.article-body { padding: 64px 0 80px; background: var(--vellum); }
+.article-body p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; line-height: 1.75; color: var(--ink);
+  margin-bottom: 22px; font-weight: 400;
+}
+.article-body p.lede { font-size: 22px; line-height: 1.7; }
+.article-body p em { font-style: italic; color: var(--compline); }
+.article-body .dropcap {
+  font-family: 'Cinzel', serif; font-weight: 600;
+  float: left; font-size: 64px; line-height: 0.9; padding: 6px 12px 0 0;
+  color: var(--gold-deep);
+}
+
+.article-body .pull-quote {
+  border-left: 3px solid var(--gold);
+  padding: 8px 0 8px 28px; margin: 36px 0 36px 12px;
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 22px; line-height: 1.55; color: var(--compline);
+}
+
+/* Cover-art figure styled darker for impact */
+.article-figure {
+  margin: 48px 0; padding: 32px;
+  background: var(--compline); color: var(--vellum); border: 1px solid var(--gold-deep);
+}
+.article-figure img {
+  display: block; width: 100%; height: auto;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+}
+.article-figure figcaption {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 16px; line-height: 1.55; color: rgba(250,246,238,0.8);
+  margin-top: 22px; padding-top: 22px; border-top: 1px solid rgba(201,169,97,0.4);
+}
+.article-figure .figure-label {
+  font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold-light); font-weight: 600;
+  display: block; margin-bottom: 10px;
+}
+
+.credits-box {
+  margin: 36px 0; padding: 28px 32px;
+  background: var(--vellum-warm); border-left: 3px solid var(--gold);
+}
+.credits-box .credits-label {
+  font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold-deep); font-weight: 600; margin-bottom: 16px;
+}
+.credits-box dl { font-family: 'Cormorant Garamond', serif; font-size: 18px; line-height: 1.5; }
+.credits-box dt { color: var(--ink-soft); font-style: italic; margin-top: 12px; }
+.credits-box dt:first-of-type { margin-top: 0; }
+.credits-box dd { color: var(--ink); margin-left: 0; }
+.credits-box dd strong { color: var(--compline); font-weight: 600; }
+
+.article-signature {
+  margin-top: 48px; padding-top: 36px; border-top: 1px solid var(--rule);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px; line-height: 1.7; color: var(--ink);
+}
+.article-signature .name {
+  font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--compline); font-weight: 600;
+  display: block; margin-bottom: 4px;
+}
+.article-signature .role { font-style: italic; color: var(--ink-soft); }
+
+.article-footer-nav {
+  background: var(--vellum-warm); border-top: 1px solid var(--rule);
+  padding: 56px 0;
+}
+.article-footer-nav .nav-links-row {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 24px;
+}
+.article-footer-nav a.back-link {
+  font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase;
+  color: var(--empyrean); text-decoration: none; font-weight: 600;
+}
+.article-footer-nav .legal-marker {
+  font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--ink-soft); font-weight: 500;
+}
+</style>
+</head>
+<body>
+
+<nav class="nav solid">
+  <a href="/" class="nav-mark"><span class="ms">Beatific</span><span class="mc">Vision</span></a>
+  <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="/watch">Watch</a></li>
+    <li><a href="/listen">Listen</a></li>
+    <li><a href="/read" class="active">Read</a></li>
+    <li><a href="/app">Apps</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/cfi">CFI</a></li>
+    <li><a href="/support" class="cta">Support</a></li>
+  </ul>
+</nav>
+
+<article>
+  <header class="article-hero">
+    <div class="container-narrow">
+      <a href="/read" class="back-to-journal">← The Journal</a>
+      <div class="eyebrow">Director's Note · II</div>
+      <h1>On Restoring <em style="font-style: italic; text-transform: none; font-family: 'Cormorant Garamond', serif; font-weight: 500;">The Most Beautiful Thing This Side of Heaven</em></h1>
+      <div class="article-byline">
+        <strong>Ryan C. McCarty</strong> · Anno Domini MMXXVI · ~ 1,000 words
+      </div>
+    </div>
+  </header>
+
+  <section class="article-body">
+    <div class="container-narrow">
+
+      <p class="lede"><span class="dropcap">T</span>here is a phrase from the popular Catholic press of the last century — its provenance disputed, frequently attributed to Bishop Sheen — to the effect that the Holy Mass is <em>the most beautiful thing this side of heaven</em>. The phrase has had a long life in homiletic literature, and a longer life in the mouths of priests teaching the young. When we set out to film a Solemn High Mass at Our Lady of Perpetual Help in the summer of MMXI, we did not labor over the title. The phrase named the thing we were attempting to record.</p>
+
+      <p>The Mass was offered on the twenty-ninth of June, MMXI, the Feast of Saints Peter and Paul, in the church of Our Lady of Perpetual Help in Kansas City, Missouri — the Redemptorist parish, named locally for its shrine to the eponymous icon.</p>
+
+      <div class="credits-box">
+        <div class="credits-label">The Mass · 29 June MMXI · OLPH, Kansas City, Missouri</div>
+        <dl>
+          <dt>Celebrant</dt>
+          <dd><strong>Canon William Avis</strong> — Institute of Christ the King Sovereign Priest</dd>
+          <dt>Deacon &amp; Preacher</dt>
+          <dd><strong>Father John Fongemie</strong> — Priestly Fraternity of Saint Peter</dd>
+          <dt>Sub-Deacon</dt>
+          <dd><strong>Father Evan Harkins</strong> — Diocese of Kansas City–Saint Joseph in Missouri</dd>
+          <dt>Choir Director</dt>
+          <dd><strong>Doctor Ivan Csanaky</strong> — Saint Philippine Duchesne Latin Mass Community</dd>
+        </dl>
+      </div>
+
+      <p><em>Three jurisdictions of priestly life, gathered at one altar, on one feast, for one Mass.</em> The fact itself was a small marvel. We did not arrange it; the circumstances did.</p>
+
+      <p>The film's subject is what was happening, in those years, beneath the visible surface of Catholic life in middle-American dioceses: the patient, parochial, often under-publicized work of returning the Traditional Latin Mass to a place of regular and dignified celebration in mainstream parishes. Nothing about the Kansas City story was unique. <em>That is precisely why we wanted to film it.</em> What was happening in our diocese was happening in dozens of others — and would soon be happening in hundreds more — and almost no one was making a sustained visual record of any of it.</p>
+
+      <p>The documentary runs sixty-four minutes. It is patient. It does not preach. It frames the rite, the music, the ministers, the people in the pews, and it allows the Mass to make its own argument. <em>The argument the Mass makes — when it is permitted to be itself, in the form the Church has handed down — is the argument the title makes.</em> We are not philosophers in this; we are, at most, attentive recordists. The phenomenon is its own apologist.</p>
+
+      <p>In MMXI, the film was released on DVD, distributed in modest quantities, and screened in small parish settings. The original masters were preserved. For more than a decade they sat — through a season of legal practice, the formation of a family, the deliberate setting-aside of the studio — in the keeping of a director who never stopped intending to bring them out again.</p>
+
+      <p>We have brought them out.</p>
+
+      <div class="pull-quote">
+        We do not believe in revising one's earlier work to flatter one's present taste. We believe in releasing it again, into the world it was made for, so that the work might do what it has always been able to do.
+      </div>
+
+      <p><em>The Most Beautiful Thing This Side of Heaven</em> is being restored from the original masters and re-released in MMXXVI as the inaugural feature of the resumed Beatific Vision catalog. It is the same film. The choices are the same choices. The framing is the framing we made at twenty-eight. The benefit of the years is in the housing — a proper streaming platform, a proper application, a proper studio architecture — not in the editorial.</p>
+
+      <figure class="article-figure">
+        <span class="figure-label">DVD Cover Art · MMXI Original Release</span>
+        <img src="/img/films/most-beautiful-thing-spread-web.jpg" alt="The Most Beautiful Thing This Side of Heaven — DVD cover spread, MMXI. Stained-glass imagery shows Saint Paul (back cover) and Saint Peter (front cover), the apostles whose feast the Mass celebrated. Front cover features the title arched above Saint Peter holding the keys. Back cover lists special thanks to the celebrant, deacon, sub-deacon, and choir director. Copyright 2011 Beatific Vision, Inc.">
+        <figcaption>
+          DVD cover spread, MMXI original release. Front cover: Saint Peter, holding the keys, beneath the arched title. Back cover: Saint Paul, with the production credits — Canon Avis, Father Fongemie, Father Harkins, Doctor Csanaky. The two apostles whose feast the Mass celebrated — fitting bookends for a film about the Church recovering her own. Copyright © MMXI Beatific Vision, Inc.
+        </figcaption>
+      </figure>
+
+      <p>When the film opens on the platform — within the week of this note — viewers will encounter the Mass as our young camera crew first encountered it: in awe, at a respectful distance, with a willingness to be silent for long stretches and let the chant speak. We had little in the way of resources. We had a Canon body, a tripod, a few lavalier microphones, the goodwill of the celebrants, and the obvious truth that we were filming something that did not need our embellishment.</p>
+
+      <p><em>It needed, only, to be seen.</em></p>
+
+      <p>A note, finally, of gratitude. To Canon Avis, Father Fongemie, Father Harkins, and Doctor Csanaky — and to the Redemptorist Fathers of Our Lady of Perpetual Help, who hosted the Mass and the cameras alike. To the choir, the servers, and the parishioners of that morning. <em>Without them there is no film, because without them there is no Mass.</em></p>
+
+      <p>To the Mass itself: the most beautiful thing this side of heaven.</p>
+
+      <div class="article-signature">
+        <span class="name">Ryan C. McCarty</span>
+        <span class="role">Director · Beatific Vision · Saint Charles, Missouri</span>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="article-footer-nav">
+    <div class="container-narrow">
+      <div class="nav-links-row">
+        <a href="/read" class="back-link">← Return to The Journal</a>
+        <a href="/watch" class="back-link" style="color: var(--gold-deep);">Watch the Film →</a>
+      </div>
+    </div>
+  </section>
+
+</article>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="ms">Beatific</div>
+        <div class="mc">Vision</div>
+        <p class="blurb">A Catholic film studio and integrated media enterprise. Founded MMX. Resumed MMXXIV. Saint Charles, Missouri.</p>
+      </div>
+      <div class="footer-col"><h4>The Catalog</h4><ul><li><a href="/watch">Watch</a></li><li><a href="/listen">Listen</a></li><li><a href="/read">Read</a></li><li><a href="/app">Empyrean App</a></li></ul></div>
+      <div class="footer-col"><h4>The House</h4><ul><li><a href="/about">About Beatific Vision</a></li><li><a href="/cfi">Catholic Film Institute</a></li><li><a href="/listen">Catholica Cinematica</a></li><li><a href="/about#brand">Brand &amp; Marks</a></li></ul></div>
+      <div class="footer-col"><h4>Take Part</h4><ul><li><a href="/support">Subscribe</a></li><li><a href="https://secure.qgiv.com/for/catholicfilminstitute" target="_blank" rel="noopener">Donate to CFI</a></li><li><a href="mailto:rchmccarty@beatificvision.com">Contact</a></li><li><a href="/legal">Legal &amp; Trademarks</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© Anno Domini MMXXVI · Beatific Vision, LLC &amp; Beatific Vision, Inc.</span>
+      <span>BEATIFIC VISION® · Reg. USPTO · Serial 98488250 &amp; 98541662</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const navToggle = document.getElementById('nav-toggle');
+const navLinks = document.getElementById('nav-links');
+navToggle?.addEventListener('click', () => navLinks.classList.toggle('is-open'));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('is-open')));
+</script>
+</body>
+</html>

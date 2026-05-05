@@ -49,13 +49,13 @@
   background: radial-gradient(ellipse at 35% 25%, rgba(201,169,97,0.25) 0%, transparent 55%);
 }
 .article-feature-image .roman-num {
-  font-family: 'Cinzel', serif; font-size: 120px; color: rgba(201,169,97,0.15);
+  font-family: 'Cinzel', serif; font-size: 120px; color: rgba(201,169,97,0.18);
   font-weight: 600; letter-spacing: 0.04em;
   position: relative; z-index: 1;
 }
 
 /* Article cards */
-.article-card { border-bottom: 1px solid var(--rule); padding: 36px 0; display: grid; grid-template-columns: 1fr 4fr; gap: 40px; align-items: baseline; transition: opacity 0.3s; }
+.article-card { border-bottom: 1px solid var(--rule); padding: 36px 0; display: grid; grid-template-columns: 1fr 4fr; gap: 40px; align-items: baseline; transition: opacity 0.3s; text-decoration: none; color: inherit; }
 .article-card:hover { opacity: 0.85; }
 .article-card:hover h3 { color: var(--empyrean); }
 @media (max-width: 720px) { .article-card { grid-template-columns: 1fr; gap: 12px; } }
@@ -81,6 +81,19 @@
   color: var(--empyrean); font-weight: 600; margin-top: 12px; display: inline-flex; align-items: center; gap: 8px;
 }
 .article-card .read-more::after { content: '→'; }
+
+.forthcoming-note {
+  margin-top: 56px; padding: 36px 40px;
+  background: var(--vellum-warm); border: 1px solid var(--rule); border-left: 3px solid var(--gold);
+}
+.forthcoming-note .label {
+  font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold-deep); font-weight: 600; margin-bottom: 12px;
+}
+.forthcoming-note p {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 18px; line-height: 1.6; color: var(--ink); margin: 0;
+}
 </style>
 </head>
 <body>
@@ -111,16 +124,16 @@
 <!-- ===================== FEATURED ARTICLE ===================== -->
 <section style="padding-top: 80px;">
   <div class="container-narrow">
-    <a href="#article-i" class="article-feature" data-reveal style="text-decoration: none; color: inherit;">
+    <a href="/read/an-interrupted-vocation-resumed" class="article-feature" data-reveal style="text-decoration: none; color: inherit;">
       <div class="article-feature-text">
-        <div class="label">Featured · Inaugural Essay</div>
-        <h2>An Unfinished Cathedral</h2>
-        <p class="lede">It is sometimes said that the great age of Catholic art is behind us — that the cathedrals were built, the icons painted, the great fugues composed, and that what remains is to admire and preserve. We do not believe this. We believe the cathedral of the modern age is the cinema, and that its construction has been arrested at the foundations.</p>
-        <div class="meta">Ryan C. McCarty · 30 April · MMXXVI · 2,400 words</div>
-        <span class="read-more" style="font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--empyrean); font-weight: 600; align-self: flex-start;">Read the Essay →</span>
+        <div class="label">Featured · Founder's Letter</div>
+        <h2>An Interrupted Vocation, Resumed</h2>
+        <p class="lede">A founder's letter on the long pause between Beatific Vision's first season — MMX to MMXII — and its resumption in MMXXIV. On the work of law, the formation of a family, the maintenance of conviction across years of apparent silence, and the deliberate architecture of an enterprise built for perpetuity.</p>
+        <div class="meta">Ryan C. McCarty · Anno Domini MMXXVI · ~ 1,500 words</div>
+        <span class="read-more" style="font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--empyrean); font-weight: 600; align-self: flex-start;">Read the Letter →</span>
       </div>
       <div class="article-feature-image">
-        <div class="roman-num">I</div>
+        <div class="roman-num">III</div>
       </div>
     </a>
   </div>
@@ -131,65 +144,35 @@
   <div class="container-narrow">
     <h2 style="font-family: 'Cinzel', serif; font-size: 22px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--compline); font-weight: 600; padding-bottom: 18px; border-bottom: 1px solid var(--rule); margin-bottom: 0;">Recent Entries</h2>
 
-    <a href="#article-ii" class="article-card" data-reveal>
+    <a href="/read/most-beautiful-thing" class="article-card" data-reveal>
       <div class="article-card-meta">
-        Manifesto · II
-        <span class="date">28 April · MMXXVI</span>
+        Director's Note · II
+        <span class="date">Anno Domini MMXXVI</span>
       </div>
       <div>
-        <h3>Why "Catholic Cinema" Is Not a Genre</h3>
-        <p class="excerpt">The phrase "Catholic film" is most often deployed to describe a category of religious-themed entertainment — saints, scripture, the lives of the holy. It is a useful descriptive shorthand, but it is also profoundly misleading. The Catholic imagination, properly understood, is not a subject matter but a way of seeing. It is the conviction that creation is sacramental, that matter participates in spirit, and that beauty is the visible form of the good…</p>
+        <h3>On Restoring &ldquo;The Most Beautiful Thing This Side of Heaven&rdquo;</h3>
+        <p class="excerpt">A director's note on the 2011 documentary — its subject (a Solemn High Mass at Our Lady of Perpetual Help in Kansas City), its makers (Canon Avis, Father Fongemie, Father Harkins, Doctor Csanaky), and the rationale for restoring the original masters and re-releasing the film in 2026 as the inaugural feature of the resumed Beatific Vision catalog.</p>
         <span class="read-more">Continue Reading</span>
       </div>
     </a>
 
-    <a href="#article-iii" class="article-card" data-reveal>
+    <a href="/read/seraphim-screenwriting-competition" class="article-card" data-reveal>
       <div class="article-card-meta">
-        Founder's Letter · III
-        <span class="date">15 April · MMXXVI</span>
+        Archival Note · I
+        <span class="date">Anno Domini MMXXVI</span>
       </div>
       <div>
-        <h3>An Interrupted Vocation, Resumed</h3>
-        <p class="excerpt">A letter from the founder on the long pause between Beatific Vision's first season — 2010 to 2012 — and its resumption in 2024. On the work of law, the formation of a family, the maintenance of conviction across years of apparent silence, and the slow consolidation of what is now an integrated media enterprise…</p>
+        <h3>The Seraphim Screenwriting Competition: A First Attempt</h3>
+        <p class="excerpt">An archival note on the 2011 Seraphim Screenwriting Competition — the first nationwide Catholic screenwriting contest, advertised in <em>Script Magazine</em> and <em>Creative Screenwriting</em>, with a guaranteed greenlight on the line. Why the prize was not awarded that year, what the contest taught about the upstream pipeline, and what we are persuaded the resumed enterprise might do with it next. Includes the original 2011 trade-press advertisement as primary-source documentation.</p>
         <span class="read-more">Continue Reading</span>
       </div>
     </a>
 
-    <a href="#article-iv" class="article-card" data-reveal>
-      <div class="article-card-meta">
-        Criticism · IV
-        <span class="date">10 April · MMXXVI</span>
-      </div>
-      <div>
-        <h3>The Hollywood Industrial Complex and Its Discontents</h3>
-        <p class="excerpt">The mainstream studios are no longer in the business of cinema; they are in the business of intellectual property exploitation. This is not a moral indictment but a structural one. A studio that has hollowed out its R&amp;D function, mortgaged its catalogs, and committed itself to franchise extension cannot be expected to produce art. It is producing what the system rewards: yield…</p>
-        <span class="read-more">Continue Reading</span>
-      </div>
-    </a>
+    <div class="forthcoming-note">
+      <div class="label">Editorial Note</div>
+      <p>The Journal publishes new entries as they are written, on the unhurried schedule that long-form writing requires. Three further entries are presently in preparation: a critical essay on Bresson's <em>Diary of a Country Priest</em>, an interview by correspondence with a Catholic film composer, and a theological essay on the sacramental imagination in cinema. <em>Subscribe to be notified when each is published.</em></p>
+    </div>
 
-    <a href="#article-v" class="article-card" data-reveal>
-      <div class="article-card-meta">
-        Theology &amp; Cinema · V
-        <span class="date">2 April · MMXXVI</span>
-      </div>
-      <div>
-        <h3>Bresson's Reverence and What It Demands of Us</h3>
-        <p class="excerpt">Robert Bresson's films are difficult to describe and impossible to imitate, in part because his work proceeds from a theological premise that contemporary cinema has largely abandoned: that the human face, attentively framed and quietly held, is itself a site of grace. To recover Bresson is to recover a doctrine of the visible, and the labor that doctrine demands of the maker…</p>
-        <span class="read-more">Continue Reading</span>
-      </div>
-    </a>
-
-    <a href="#article-vi" class="article-card" data-reveal>
-      <div class="article-card-meta">
-        Interview · VI
-        <span class="date">22 March · MMXXVI</span>
-      </div>
-      <div>
-        <h3>"We Need Sanctuaries" — A Conversation with Gonzalo Zubillaga</h3>
-        <p class="excerpt">The film score composer and music producer behind Kairos Films &amp; Music Composition Studio reflects on three continents of work in secular media, the Catholic creator's persistent loneliness in the industry, and what would change if there were proper institutional homes for serious Catholic artists. A conversation conducted by correspondence…</p>
-        <span class="read-more">Continue Reading</span>
-      </div>
-    </a>
   </div>
 </section>
 

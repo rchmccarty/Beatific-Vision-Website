@@ -855,6 +855,35 @@ section {
   border-top: 1px solid rgba(201, 169, 97, 0.4);
 }
 
+/* Image-based poster for the actual DVD cover */
+.featured-poster-image {
+  position: relative;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 40px 80px -30px rgba(0,0,0,0.65);
+  border: 1px solid rgba(201,169,97,0.4);
+  background: var(--compline);
+}
+.featured-poster-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.featured-poster-image .badge {
+  position: absolute;
+  top: 16px; left: 16px;
+  background: rgba(10,19,64,0.92);
+  color: var(--gold-light);
+  font-family: 'Cinzel', serif;
+  font-size: 8px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 8px 14px;
+  border: 1px solid rgba(201,169,97,0.4);
+  z-index: 2;
+}
+
 /* ============ CONSTELLATION ============ */
 .constellation {
   background: var(--vellum);
@@ -1635,14 +1664,9 @@ footer {
         <a href="/watch" class="btn btn-light">Watch the Film</a>
       </div>
 
-      <div class="featured-poster" data-reveal>
-        <div class="featured-poster-top">A Beatific Vision Film</div>
-        <div class="featured-poster-bottom">
-          <div class="featured-poster-script">The Most</div>
-          <div class="featured-poster-script" style="font-size: 0.85em;">Beautiful Thing</div>
-          <div class="featured-poster-cap">This Side of Heaven</div>
-          <div class="featured-poster-meta">A documentary · Directed by Ryan C. McCarty<br>Original Release: MMXI · Restored Release: MMXXVI</div>
-        </div>
+      <div class="featured-poster-image" data-reveal>
+        <span class="badge">DVD · MMXI</span>
+        <img src="/img/films/most-beautiful-thing-front-poster.jpg" alt="The Most Beautiful Thing This Side of Heaven — DVD cover, 2011 original release. Saint Peter holding the keys, beneath the arched title.">
       </div>
     </div>
   </div>

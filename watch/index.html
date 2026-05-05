@@ -89,6 +89,34 @@
   padding-top: 18px; border-top: 1px solid rgba(201, 169, 97, 0.4);
 }
 
+/* Image-based poster for the actual DVD cover */
+.featured-poster-image {
+  position: relative;
+  border-radius: 2px; overflow: hidden;
+  box-shadow: 0 40px 80px -30px rgba(0,0,0,0.65);
+  border: 1px solid rgba(201,169,97,0.4);
+  background: var(--compline);
+}
+.featured-poster-image img {
+  display: block; width: 100%; height: auto;
+}
+.featured-poster-image .badge {
+  position: absolute; top: 16px; left: 16px;
+  background: rgba(10,19,64,0.92); color: var(--gold-light);
+  font-family: 'Cinzel', serif; font-size: 8px; letter-spacing: 0.3em; text-transform: uppercase;
+  font-weight: 600; padding: 8px 14px; border: 1px solid rgba(201,169,97,0.4);
+  z-index: 2;
+}
+
+/* Image-based card poster for the documentary card */
+.card-poster.documentary-image {
+  background: var(--compline); padding: 0; overflow: hidden; aspect-ratio: 2 / 3;
+  position: relative;
+}
+.card-poster.documentary-image img {
+  display: block; width: 100%; height: 100%; object-fit: cover;
+}
+
 /* Section labels for catalog buckets */
 .catalog-section-header {
   display: flex; align-items: baseline; justify-content: space-between;
@@ -155,18 +183,16 @@
         <p class="featured-desc">The first feature-length documentary released under the Beatific Vision banner — an account of the re-introduction of the Traditional Latin Mass into the mainstream of the Archdiocese of Kansas City, Missouri. Produced over 18 months with cooperation from priests, parishioners, and visiting laity, the film is a meditation on what is recovered when the Church recovers her own liturgical patrimony, and what was lost when she did not.</p>
         <p class="featured-desc" style="font-style: italic; color: var(--gold-light);">Originally released 2011. Restored from the original masters and re-released for the new platform in 2026.</p>
         <div class="featured-actions">
-          <a href="#" onclick="event.preventDefault(); alert('Streaming launches with Empyrean — May 2026'); return false;" class="btn btn-primary">▷ Watch the Film</a>
+          <a href="/read/most-beautiful-thing" class="btn btn-primary">Read the Director's Note</a>
           <a href="/app" class="btn btn-light">Watch on Empyrean</a>
         </div>
+        <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 14px; color: rgba(250,246,238,0.6); margin-top: 24px; line-height: 1.5;">
+          The restored film begins streaming on the platform within the week. <em style="color: var(--gold-light);">Subscribers receive premiere notice.</em>
+        </p>
       </div>
-      <div class="featured-poster" data-reveal>
-        <div class="featured-poster-top">A Beatific Vision Film</div>
-        <div class="featured-poster-bottom">
-          <div class="featured-poster-script">The Most</div>
-          <div class="featured-poster-script" style="font-size: 0.85em;">Beautiful Thing</div>
-          <div class="featured-poster-cap">This Side of Heaven</div>
-          <div class="featured-poster-meta">A documentary · Directed by Ryan C. McCarty<br>Original Release: MMXI · Restored Release: MMXXVI</div>
-        </div>
+      <div class="featured-poster-image" data-reveal>
+        <span class="badge">DVD · MMXI</span>
+        <img src="/img/films/most-beautiful-thing-front-poster.jpg" alt="The Most Beautiful Thing This Side of Heaven — DVD cover art, 2011 original release. Stained-glass image of Saint Peter holding the keys, beneath the arched title, with credits for the Solemn High Mass at Our Lady of Perpetual Help in Kansas City.">
       </div>
     </div>
   </div>
@@ -181,20 +207,15 @@
     </div>
 
     <div class="card-grid cols-4">
-      <a href="#" onclick="event.preventDefault(); alert('Streaming launches with Empyrean \u2014 May 2026'); return false;" class="card" data-reveal>
-        <div class="card-poster documentary">
-          <div class="card-poster-top">A Beatific Vision Film</div>
-          <div class="card-poster-bottom">
-            <div class="card-poster-script">The Most<br>Beautiful Thing</div>
-            <div class="card-poster-cap">This Side of Heaven</div>
-            <div class="card-poster-meta">Documentary · MMXI</div>
-          </div>
+      <a href="/read/most-beautiful-thing" class="card" data-reveal>
+        <div class="card-poster documentary-image">
+          <img src="/img/films/most-beautiful-thing-front-thumb.jpg" alt="The Most Beautiful Thing This Side of Heaven — Saint Peter stained-glass cover art">
         </div>
         <div class="card-body">
           <div class="card-meta">Documentary · 64 min · MMXI</div>
           <div class="card-title">The Most Beautiful Thing This Side of Heaven</div>
           <div class="card-desc">The Traditional Latin Mass returns to the Archdiocese of Kansas City — a meditation on what was lost and what is being recovered.</div>
-          <span class="card-cta">Watch</span>
+          <span class="card-cta">Director's Note</span>
         </div>
       </a>
 

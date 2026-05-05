@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>An Interrupted Vocation, Resumed — The Journal · Beatific Vision</title>
+<meta name="description" content="A founder's letter on the long pause between Beatific Vision's first season and its resumption — and on the architecture of an enterprise built for perpetuity.">
+<link rel="icon" type="image/jpeg" href="/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Italianno&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.back-to-journal {
+  font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase;
+  color: var(--gold-deep); text-decoration: none; font-weight: 600;
+  display: inline-block; margin-bottom: 32px;
+}
+.back-to-journal:hover { color: var(--empyrean); }
+
+.article-hero {
+  background: var(--vellum); border-bottom: 1px solid var(--rule);
+  padding: 80px 0 56px;
+}
+.article-hero .eyebrow {
+  font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase;
+  color: var(--gold-deep); font-weight: 600; margin-bottom: 18px;
+  display: flex; align-items: center; gap: 12px;
+}
+.article-hero .eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+.article-hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(30px, 4.4vw, 52px); font-weight: 500;
+  letter-spacing: 0.03em; text-transform: uppercase;
+  color: var(--compline); line-height: 1.2;
+  margin-bottom: 28px;
+}
+.article-byline {
+  font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--ink-soft); font-weight: 500;
+}
+.article-byline strong { color: var(--compline); font-weight: 600; }
+
+.article-body { padding: 64px 0 80px; background: var(--vellum); }
+.article-body p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; line-height: 1.75; color: var(--ink);
+  margin-bottom: 22px; font-weight: 400;
+}
+.article-body p.lede { font-size: 22px; line-height: 1.7; }
+.article-body p em { font-style: italic; color: var(--compline); }
+.article-body .dropcap {
+  font-family: 'Cinzel', serif; font-weight: 600;
+  float: left; font-size: 64px; line-height: 0.9; padding: 6px 12px 0 0;
+  color: var(--gold-deep);
+}
+.article-body h2.section-break {
+  font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 0.32em;
+  text-transform: uppercase; color: var(--gold-deep); font-weight: 600;
+  text-align: center; margin: 56px auto 36px; padding: 0;
+  position: relative; max-width: 320px;
+}
+.article-body h2.section-break::before,
+.article-body h2.section-break::after {
+  content: ''; position: absolute; top: 50%;
+  width: 60px; height: 1px; background: var(--gold);
+}
+.article-body h2.section-break::before { left: -76px; }
+.article-body h2.section-break::after { right: -76px; }
+@media (max-width: 600px) {
+  .article-body h2.section-break::before,
+  .article-body h2.section-break::after { display: none; }
+}
+
+.article-body .pull-quote {
+  border-left: 3px solid var(--gold);
+  padding: 8px 0 8px 28px; margin: 36px 0 36px 12px;
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 22px; line-height: 1.55; color: var(--compline);
+}
+
+.article-signature {
+  margin-top: 48px; padding-top: 36px; border-top: 1px solid var(--rule);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px; line-height: 1.7; color: var(--ink);
+}
+.article-signature .name {
+  font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--compline); font-weight: 600;
+  display: block; margin-bottom: 4px;
+}
+.article-signature .role { font-style: italic; color: var(--ink-soft); }
+.article-signature .latin {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  color: var(--gold-deep); margin-top: 14px; display: block;
+}
+
+.article-footer-nav {
+  background: var(--vellum-warm); border-top: 1px solid var(--rule);
+  padding: 56px 0;
+}
+.article-footer-nav .nav-links-row {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 24px;
+}
+.article-footer-nav a.back-link {
+  font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase;
+  color: var(--empyrean); text-decoration: none; font-weight: 600;
+}
+</style>
+</head>
+<body>
+
+<nav class="nav solid">
+  <a href="/" class="nav-mark"><span class="ms">Beatific</span><span class="mc">Vision</span></a>
+  <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="/watch">Watch</a></li>
+    <li><a href="/listen">Listen</a></li>
+    <li><a href="/read" class="active">Read</a></li>
+    <li><a href="/app">Apps</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/cfi">CFI</a></li>
+    <li><a href="/support" class="cta">Support</a></li>
+  </ul>
+</nav>
+
+<article>
+  <header class="article-hero">
+    <div class="container-narrow">
+      <a href="/read" class="back-to-journal">← The Journal</a>
+      <div class="eyebrow">Founder's Letter · III</div>
+      <h1>An Interrupted Vocation, Resumed</h1>
+      <div class="article-byline">
+        <strong>Ryan C. McCarty</strong> · Anno Domini MMXXVI · ~ 1,500 words
+      </div>
+    </div>
+  </header>
+
+  <section class="article-body">
+    <div class="container-narrow">
+
+      <p class="lede"><span class="dropcap">I</span> was twenty-seven years old when I founded Beatific Vision in MMX. The company was — as small companies often are — an act of conviction in advance of resources. I had a name, a wordmark, a motto in Latin, a post-office box in Lee's Summit, and a settled persuasion that the cinema, properly understood, was a Catholic art form which had been progressively surrendered to people who did not love it. <em>The conviction was correct then. It is correct now.</em></p>
+
+      <p>The first season of the company ran roughly thirty months. In MMXI, we launched the Seraphim Screenwriting Competition, advertised in the national trade press, offering a guaranteed greenlight to a winning Catholic feature script. We received submissions, considered them seriously, and — when none rose to the level the prize demanded — declined to declare a winner, on the terms the contest had stated. In June of that year we filmed a Solemn High Mass in Kansas City and produced our first feature-length documentary, <em>The Most Beautiful Thing This Side of Heaven</em>. In MMXII, we hosted an inaugural Catholic film conference in Saint Louis and began development on a dramatic feature.</p>
+
+      <p>Then the work was set aside.</p>
+
+      <p>The reasons were not mysterious or particularly heroic. <em>Law called</em> — three years of formal training, then practice, with the obligations practice imposes. <em>Family called</em> — the slow, glad work of marrying well and raising children well. The studio waited. There is no shame in it. Many serious vocations include a season of consolidation that does not look like the vocation itself. The cathedral builders worked, frequently, on tasks that were not the cathedral. <em>The cathedral was always the point.</em></p>
+
+      <p>A particular grace of these years was the ability to watch the Catholic creative landscape change without any pressure to comment, monetize, or compete. I watched the rise and fall of a number of well-intentioned Catholic-film startups. I watched the streaming era arrive and partially mature. I watched the sclerosis of the studio system accelerate. I watched the Catholic intellectual world produce, in this same period, a remarkable amount of serious theological and cultural recovery — the recovery of the liturgy, the recovery of natural law, the recovery of the contemplative tradition, the recovery of a publicly serious Catholic political theory — almost none of which has yet found a corresponding cinematic expression of equivalent seriousness.</p>
+
+      <div class="pull-quote">
+        It seemed — and seems — to me that the cinema is the great catechism of the modern world, and that we have surrendered the pulpit.
+      </div>
+
+      <h2 class="section-break">II</h2>
+
+      <p>In MMXXIV, we resumed.</p>
+
+      <p>The resumption is not, I think, a continuation. It is a new founding, on the foundations of the old, with the benefit of fourteen years of married, lawyered, fathered patience. The company is what the original founder hoped he would be ready to build, eventually. <em>He was not ready in MMXI. He is closer now.</em></p>
+
+      <p>The architecture of the resumption is deliberate and somewhat unusual. It will reward a brief explanation, because much of what we believe about Catholic creative work is encoded in the corporate form itself.</p>
+
+      <p>There are two corporate entities, both Delaware-domiciled. <em>Beatific Vision, LLC</em> is a single-member limited liability company, formed in May MMXXIV, which serves as the holding entity for the brand, the marks, the catalog, and the long-form intellectual property. It has one member, and that member is the founder. The LLC also serves as the sole member of our charitable apostolate, the <em>Catholic Film Institute</em> — a Delaware nonprofit corporation incorporated in coordination with the LLC and recognized by the Internal Revenue Service as tax-exempt under Section 501(c)(3) of the Internal Revenue Code. The LLC's purpose is <em>patrimony</em>: the perpetual, family-controlled custody of the mission across generations. It is the mission-lock. It is built to endure.</p>
+
+      <p>The second entity, <em>Beatific Vision, Inc.</em>, is a Delaware Public Benefit Corporation with ten million authorized shares. The PBC is the <em>operations</em> arm — the studio at industry scale. It is built to take patient capital from aligned investors, to issue shares (under a class architecture that preserves founder control), to make films, to operate the streaming platform, and to do all the ordinary things a media company does, while remaining bound by its public-benefit charter to a stated Catholic mission.</p>
+
+      <p><em>The PBC is the active limb. The LLC is the spine.</em></p>
+
+      <p>Beneath the brand we will, in time, stand up additional verticals: a guild analog for Catholic creative practitioners; a representation agency for our talent; a production-finance vehicle; a distribution arm; the streaming platform that the Empyrean application opens. Each will operate within the single brand architecture and under the single visual identity. <em>The point is consolidation, not duplication.</em></p>
+
+      <h2 class="section-break">III</h2>
+
+      <p>The reason for the architectural complexity is theological as much as legal. We do not believe that <em>patrimony</em> and <em>operations</em> should be conflated. A great Catholic enterprise needs both — it needs an inalienable spiritual deposit and a vigorous operating company — but the conflation of the two has, historically, ruined many ecclesiastical and quasi-ecclesiastical institutions.</p>
+
+      <p>Universities have lost their identities by allowing operational pressures to corrode their patrimony. Religious orders have, in places, become consultancies. Catholic publishers have, with depressing regularity, become indistinguishable from secular trade houses. <em>The architecture of the resumed Beatific Vision is built to make that drift mechanically more difficult.</em></p>
+
+      <p>The patrimony arm holds the marks, the films, the catalog, and the controlling interest in the apostolate. It cannot be sold without the consent of a single member, and the single membership is governed by a succession instrument that requires, of any successor, both blood-or-marriage relationship to the founding family <em>and</em> practicing-Catholic standing in good order, verified by a parish priest. The operating arm may be capitalized, fundraised against, expanded, contracted, restructured — within the limits of its PBC charter, which states the mission. <em>The mission cannot be amended. The means can be.</em></p>
+
+      <p>This is, frankly, an attempt to do for a media company what the cathedral chapter has historically done for a cathedral: to constitute a perpetual <em>body corporate</em> whose first duty is the preservation of a deposit, whose secondary duty is the active service of that deposit in the present, and whose succession is governed by the deposit itself rather than by the convenience of any one generation. The form is borrowed. <em>We are not the first builders to attempt to build for centuries.</em></p>
+
+      <h2 class="section-break">IV</h2>
+
+      <p>What can we say of what is coming?</p>
+
+      <p>We are restoring our first documentary and releasing it again, on a proper streaming platform, in our own application. We are building out the catalog, slowly, in the manner the catalog deserves. We are hosting <em>Catholica Cinematica</em>, the public conversation of the new Catholic cinema, on a regular monthly schedule. We are publishing this Journal, of which the present essay is the third entry. We are building <em>Empyrean</em>, the desktop application that holds the catalog, available for free download on macOS, Windows, and Linux. We are quietly preparing the production slate of the next film. We are forming, through the Catholic Film Institute, the next generation of writers and directors to whom we hope, in time, to hand a working studio.</p>
+
+      <p>The labor will be generational. <em>The labor of cathedrals always was.</em></p>
+
+      <p>To our readers, viewers, listeners, donors, and prayers — we are deeply grateful. Hold us to our mission. Tell us when we wander. <em>We mean to build something that outlasts us.</em></p>
+
+      <div class="article-signature">
+        <span class="name">Ryan C. McCarty</span>
+        <span class="role">Founder &amp; President · Beatific Vision · Saint Charles, Missouri</span>
+        <span class="latin">Per visum, ad gloriam.</span>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="article-footer-nav">
+    <div class="container-narrow">
+      <div class="nav-links-row">
+        <a href="/read" class="back-link">← Return to The Journal</a>
+        <a href="/about" class="back-link" style="color: var(--gold-deep);">More About the House →</a>
+      </div>
+    </div>
+  </section>
+
+</article>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="ms">Beatific</div>
+        <div class="mc">Vision</div>
+        <p class="blurb">A Catholic film studio and integrated media enterprise. Founded MMX. Resumed MMXXIV. Saint Charles, Missouri.</p>
+      </div>
+      <div class="footer-col"><h4>The Catalog</h4><ul><li><a href="/watch">Watch</a></li><li><a href="/listen">Listen</a></li><li><a href="/read">Read</a></li><li><a href="/app">Empyrean App</a></li></ul></div>
+      <div class="footer-col"><h4>The House</h4><ul><li><a href="/about">About Beatific Vision</a></li><li><a href="/cfi">Catholic Film Institute</a></li><li><a href="/listen">Catholica Cinematica</a></li><li><a href="/about#brand">Brand &amp; Marks</a></li></ul></div>
+      <div class="footer-col"><h4>Take Part</h4><ul><li><a href="/support">Subscribe</a></li><li><a href="https://secure.qgiv.com/for/catholicfilminstitute" target="_blank" rel="noopener">Donate to CFI</a></li><li><a href="mailto:rchmccarty@beatificvision.com">Contact</a></li><li><a href="/legal">Legal &amp; Trademarks</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© Anno Domini MMXXVI · Beatific Vision, LLC &amp; Beatific Vision, Inc.</span>
+      <span>BEATIFIC VISION® · Reg. USPTO · Serial 98488250 &amp; 98541662</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const navToggle = document.getElementById('nav-toggle');
+const navLinks = document.getElementById('nav-links');
+navToggle?.addEventListener('click', () => navLinks.classList.toggle('is-open'));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('is-open')));
+</script>
+</body>
+</html>
