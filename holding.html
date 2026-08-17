@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beatific Vision — Temporarily at Rest</title>
+<meta name="description" content="Beatific Vision is undergoing revision and will return shortly. Catholica Cinematica continues to publish.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/jpeg" href="/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Italianno&display=swap" rel="stylesheet">
+<style>
+:root {
+  --compline: #0A1340;
+  --compline-deep: #060B26;
+  --gold: #C9A961;
+  --gold-light: #E0C88B;
+  --vellum: #FAF6EE;
+  --vellum-dim: rgba(250, 246, 238, 0.62);
+  --vellum-faint: rgba(250, 246, 238, 0.38);
+  --rule: rgba(201, 169, 97, 0.28);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  background: var(--compline-deep);
+  background-image:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201, 169, 97, 0.09), transparent 70%),
+    linear-gradient(180deg, var(--compline) 0%, var(--compline-deep) 65%);
+  background-attachment: fixed;
+  color: var(--vellum);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.plate {
+  width: 100%;
+  max-width: 560px;
+  text-align: center;
+  animation: settle 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes settle {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  text-indent: 0.42em;
+  margin-bottom: 40px;
+}
+
+.mark-script {
+  font-family: 'Italianno', cursive;
+  font-size: clamp(72px, 15vw, 124px);
+  line-height: 0.82;
+  color: var(--gold-light);
+  font-weight: 400;
+}
+
+.mark-caps {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(17px, 3.6vw, 25px);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--vellum);
+  font-weight: 500;
+  text-indent: 0.4em;
+  margin-top: 10px;
+}
+
+/* Signature: the vigil lamp — a single rule that breathes */
+.vigil {
+  width: 84px;
+  height: 1px;
+  margin: 44px auto;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  animation: vigil 5.5s ease-in-out infinite;
+}
+
+@keyframes vigil {
+  0%, 100% { opacity: 0.32; }
+  50%      { opacity: 1; }
+}
+
+.statement {
+  font-size: clamp(19px, 3.4vw, 23px);
+  line-height: 1.62;
+  color: var(--vellum-dim);
+  font-weight: 400;
+}
+
+.statement em {
+  color: var(--gold-light);
+  font-style: italic;
+}
+
+.contact {
+  margin-top: 8px;
+  font-size: 16px;
+  color: var(--vellum-faint);
+  font-style: italic;
+}
+
+.contact a {
+  color: var(--vellum-dim);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 1px;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.contact a:hover,
+.contact a:focus-visible {
+  color: var(--gold-light);
+  border-bottom-color: var(--gold);
+}
+
+.colophon {
+  margin-top: 64px;
+  font-family: 'Cinzel', serif;
+  font-size: 8px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(250, 246, 238, 0.26);
+  font-weight: 500;
+  line-height: 2.1;
+  text-indent: 0.3em;
+}
+
+a:focus-visible {
+  outline: 1px solid var(--gold);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plate { animation: none; }
+  .vigil { animation: none; opacity: 0.7; }
+  * { transition-duration: 0.01ms !important; }
+}
+</style>
+</head>
+<body>
+
+<main class="plate">
+
+  <div class="eyebrow">Ad Interim</div>
+
+  <div class="mark-script">Beatific</div>
+  <div class="mark-caps">Vision</div>
+
+  <div class="vigil" aria-hidden="true"></div>
+
+  <p class="statement">
+    The house is undergoing revision and will reopen shortly.<br>
+    <em>The work continues.</em>
+  </p>
+
+  <p class="contact">
+    Inquiries — <a href="mailto:info@beatificvision.com">info@beatificvision.com</a>
+  </p>
+
+  <div class="colophon">
+    © Anno Domini MMXXVI · Beatific Vision, LLC &amp; Beatific Vision, Inc.<br>
+    Saint Charles, Missouri
+  </div>
+
+</main>
+
+</body>
+</html>
