@@ -12,9 +12,10 @@
       ]
     },
     {
-      "source": "/downloads/(.*)",
+      "source": "/holding",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        { "key": "Cache-Control", "value": "no-store, max-age=0" },
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
       ]
     },
     {
@@ -31,12 +32,18 @@
     }
   ],
   "redirects": [
-    { "source": "/index.html", "destination": "/", "permanent": true },
-    { "source": "/empyrean", "destination": "/app", "permanent": false },
-    { "source": "/podcast", "destination": "/listen", "permanent": false },
-    { "source": "/download/mac", "destination": "https://github.com/rchmccarty/Beatific-Vision-Website/releases/download/Empyrean/Empyrean-1.0.0-arm64-mac.zip", "permanent": false },
-    { "source": "/download/mac-intel", "destination": "https://github.com/rchmccarty/Beatific-Vision-Website/releases/download/Empyrean/Empyrean-1.0.0-mac.zip", "permanent": false },
-    { "source": "/download/windows", "destination": "https://github.com/rchmccarty/Beatific-Vision-Website/releases/download/Empyrean/Empyrean.Setup.1.0.0.exe", "permanent": false },
-    { "source": "/download/linux", "destination": "https://github.com/rchmccarty/Beatific-Vision-Website/releases/download/Empyrean/Empyrean-1.0.0.AppImage", "permanent": false }
+    { "source": "/", "destination": "/holding", "permanent": false },
+    { "source": "/index.html", "destination": "/holding", "permanent": false },
+    { "source": "/watch", "destination": "/holding", "permanent": false },
+    { "source": "/listen", "destination": "/holding", "permanent": false },
+    { "source": "/read", "destination": "/holding", "permanent": false },
+    { "source": "/app", "destination": "/holding", "permanent": false },
+    { "source": "/about", "destination": "/holding", "permanent": false },
+    { "source": "/cfi", "destination": "/holding", "permanent": false },
+    { "source": "/support", "destination": "/holding", "permanent": false },
+    { "source": "/legal", "destination": "/holding", "permanent": false },
+    { "source": "/empyrean", "destination": "/holding", "permanent": false },
+    { "source": "/podcast", "destination": "/holding", "permanent": false },
+    { "source": "/download/(.*)", "destination": "/holding", "permanent": false }
   ]
 }
